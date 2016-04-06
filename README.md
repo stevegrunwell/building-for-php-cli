@@ -8,6 +8,7 @@ Attendees will be introduced to popular PHP CLI tools and their default capabili
 
 ## Notes and links
 
+* [Symfony Console Component](http://symfony.com/doc/current/components/console/introduction.html)
 * [PHP-CLI Tools](https://github.com/wp-cli/php-cli-tools)
 * [Building PHP Daemons and Long Running Processes](https://prezi.com/pymsnzwlieqt/building-php-daemons-and-long-running-processes-tek15/) - Talk from php[tek] 2015 by [Tim Lytle](http://timlytle.net)
 

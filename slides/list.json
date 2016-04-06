@@ -31,7 +31,11 @@
         "daemons.md"
     ],
     [
-        "examples.md"
+        "examples.md",
+        "example-symfony-console.md",
+        "example-symfony-console2.md",
+        "example-symfony-console3.md",
+        "example-symfony-console4.md"
     ],
     "thank-you.md"
 ]
