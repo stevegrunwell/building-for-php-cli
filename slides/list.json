@@ -1,0 +1,37 @@
+[
+    "index.md",
+    [
+        "about-me.md",
+        "emily.md"
+    ],
+    [
+        "why-the-cli.md",
+        "benefits.md"
+    ],
+    [
+        "best-practices.md",
+        "composability.md",
+        "composability2.md",
+        "dont-assume-anything.md"
+    ],
+    [
+        "in-the-wild.md",
+        "drush.md",
+        "wp-cli.md",
+        "artisan.md"
+    ],
+    [
+        "writing-your-own-scripts.md",
+        "symfony-console.md",
+        "php-cli-tools.md",
+        "environment-variables.md",
+        "system-commands.md",
+        "escaping-shell-commands.md",
+        "exit-codes.md",
+        "daemons.md"
+    ],
+    [
+        "examples.md"
+    ],
+    "thank-you.md"
+]
