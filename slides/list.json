@@ -6,7 +6,9 @@
     ],
     [
         "why-the-cli.md",
-        "benefits.md"
+        "benefits.md",
+        "how-does-it-run.md",
+        "when-might-i-use-them.md"
     ],
     [
         "best-practices.md",
@@ -19,7 +21,8 @@
         "in-the-wild.md",
         "drush.md",
         "wp-cli.md",
-        "artisan.md"
+        "artisan.md",
+        "joomla-console.md"
     ],
     [
         "writing-your-own-scripts.md",

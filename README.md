@@ -21,6 +21,7 @@ This presentation also has [a companion repository, full of executable examples 
 * [WP-CLI](http://wp-cli.org/)
 * [Laravel Artisan](https://laravel.com/docs/5.1/artisan)
 * [Drush](http://www.drush.org/en/master/)
+* [Joomlatools Console](https://www.joomlatools.com/developer/tools/console/)
 
 ## Presentation History
 

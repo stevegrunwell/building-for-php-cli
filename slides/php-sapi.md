@@ -8,4 +8,3 @@ if ('cli' !== php_sapi_name()) {
 	return;
 }
 ```
-<!-- .element: class="fragment" -->
