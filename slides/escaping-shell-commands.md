@@ -1,3 +1,1 @@
-##  Escaping shell commands
-
-This is a new Markdown slide
+### Escaping shell commands

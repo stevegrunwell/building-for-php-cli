@@ -285,6 +285,9 @@ body {
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
 
+.slides h2 code, .slides h3 code, .slides h4 code, .slides h5 code, .slides h6 code {
+  text-transform: none; }
+
 .slides cite {
   display: block;
   margin-top: 1em;

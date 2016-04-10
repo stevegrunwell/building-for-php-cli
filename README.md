@@ -6,11 +6,15 @@ Attendees will be introduced to popular PHP CLI tools and their default capabili
 
 **[View slides](http://stevegrunwell.github.io/building-for-php-cli)**
 
+This presentation also has [a companion repository, full of executable examples from this presentation](https://github.com/stevegrunwell/php-cli-examples).
+
 ## Notes and links
 
-* [Symfony Console Component](http://symfony.com/doc/current/components/console/introduction.html)
-* [PHP-CLI Tools](https://github.com/wp-cli/php-cli-tools)
+* [Symfony Console Component](http://symfony.com/doc/current/components/console/introduction.html) - Project documentation
+* [PHP-CLI Tools](https://github.com/wp-cli/php-cli-tools) - GitHub repository
 * [Building PHP Daemons and Long Running Processes](https://prezi.com/pymsnzwlieqt/building-php-daemons-and-long-running-processes-tek15/) - Talk from php[tek] 2015 by [Tim Lytle](http://timlytle.net)
+* [Exit Codes with Special Meanings](http://tldp.org/LDP/abs/html/exitcodes.html) - The Linux Documentation Project
+* [Understanding Exit Codes and How to Use Them in Bash Scripts](http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/) - Article by Benjamin Cane
 
 ### Platform-specific CLI tools
 

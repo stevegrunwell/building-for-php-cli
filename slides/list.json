@@ -12,7 +12,8 @@
         "best-practices.md",
         "composability.md",
         "composability2.md",
-        "dont-assume-anything.md"
+        "dont-assume-anything.md",
+        "php-sapi.md"
     ],
     [
         "in-the-wild.md",
@@ -24,10 +25,21 @@
         "writing-your-own-scripts.md",
         "symfony-console.md",
         "php-cli-tools.md",
-        "environment-variables.md",
+        "argv.md",
+        "argc.md",
+        "args.md",
         "system-commands.md",
+        "exec.md",
+        "shell_exec.md",
+        "shell_exec2.md",
+        "system.md",
+        "passthru.md",
         "escaping-shell-commands.md",
+        "escaping-arguments.md",
+        "environment-variables.md",
+        "environment-variables2.md",
         "exit-codes.md",
+        "exit-codes2.md",
         "daemons.md"
     ],
     [
