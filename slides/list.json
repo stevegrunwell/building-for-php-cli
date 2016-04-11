@@ -15,7 +15,9 @@
         "composability.md",
         "composability2.md",
         "dont-assume-anything.md",
-        "php-sapi.md"
+        "php-sapi.md",
+        "verbosity.md",
+        "garbage-collection.md"
     ],
     [
         "in-the-wild.md",
