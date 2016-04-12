@@ -19,3 +19,4 @@ Current directory contents:
 vendor
 `ls` command exited with status "0"
 ```
+<!-- .element: class="fragment" -->
