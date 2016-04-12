@@ -1,7 +1,7 @@
 ### Symfony Console
 
 ```sh
-$ php examples.php symfony-example Steve
+$ php examples/SymfonyExample.php symfony-example Steve
 ```
 
 ```sh
