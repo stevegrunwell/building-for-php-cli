@@ -54,7 +54,11 @@
         "example-symfony-console3.md",
         "example-symfony-console4.md",
         "php-cli-tools-example.md",
-        "wp-cli-example.md"
+        "php-cli-tools-example2.md",
+        "wp-cli-example.md",
+        "wp-cli-example2.md",
+        "wp-cli-example3.md",
+        "wp-cli-example4.md"
     ],
     "thank-you.md"
 ]
