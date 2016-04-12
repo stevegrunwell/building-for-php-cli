@@ -15,7 +15,7 @@ $ php ArgExample.php abc 123
 There were 3 arguments passed to PHP:
 Array
 (
-  [0] => examples/ArgExample.php
+  [0] => ArgExample.php
   [1] => abc
   [2] => 123
 )
