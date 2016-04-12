@@ -66,6 +66,16 @@ section.has-light-background {
 		font-size: .8em;
 	}
 
+	.slides-link {
+		display: block;
+		margin-top: 1em;
+		font-size: .86em;
+		white-space: nowrap;
+		+ .slides-link {
+			margin-top: 0;
+		}
+	}
+
 	.speaker-headshot {
 		display: inline-block;
 		vertical-align: middle;

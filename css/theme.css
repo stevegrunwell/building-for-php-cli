@@ -293,6 +293,14 @@ body {
   margin-top: 1em;
   font-size: .8em; }
 
+.slides .slides-link {
+  display: block;
+  margin-top: 1em;
+  font-size: .86em;
+  white-space: nowrap; }
+  .slides .slides-link + .slides-link {
+    margin-top: 0; }
+
 .slides .speaker-headshot {
   display: inline-block;
   vertical-align: middle;
