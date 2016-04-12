@@ -1,6 +1,6 @@
 ###  Benefits
 
-* No reliance on the browser
+* <!-- .element: class="fragment" -->No reliance on the browser
 	* Publicly-discoverable interfaces
 	* Timeouts
 * <!-- .element: class="fragment" -->Script using the same libraries as your application
