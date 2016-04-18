@@ -21,9 +21,11 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:stevegrunwell/building-for-php-cli.git"
-
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "reveal-ga": "^0.1.0"
   }
 }
