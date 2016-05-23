@@ -6,4 +6,4 @@ Steve Grunwell<br>
 *now hiring!*
 
 [stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)<!-- .element: class="slides-link" -->
-[joind.in/talk/e9465](https://joind.in/talk/e9465)<!-- .element: class="slides-link" -->
+[joind.in/talk/ce9a4](https://joind.in/talk/ce9a4)<!-- .element: class="slides-link" -->
