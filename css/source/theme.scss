@@ -84,4 +84,8 @@ section.has-light-background {
 		margin-right: 1em;
 		transform: rotate(-8deg);
 	}
+
+	dd + dt {
+		margin-top: 1em;
+	}
 }
