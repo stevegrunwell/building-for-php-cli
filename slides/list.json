@@ -1,4 +1,5 @@
 [
+    "intro.md",
     "index.md",
     [
         "about-me.md",
@@ -34,11 +35,8 @@
         "argc.md",
         "args.md",
         "system-commands.md",
-        "exec.md",
-        "shell_exec.md",
-        "shell_exec2.md",
-        "system.md",
-        "passthru.md",
+        "system-commands2.md",
+        "system-commands3.md",
         "escaping-shell-commands.md",
         "escapeshellcmd.md",
         "escaping-arguments.md",
