@@ -83,6 +83,7 @@ module.exports = (grunt) ->
                         'js/**'
                         'css/*.css'
                         'resources/**'
+                        'node_modules/reveal-ga/dist/**'
                     ]
                     dest: 'dist/'
                 },{
