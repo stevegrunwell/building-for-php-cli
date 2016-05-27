@@ -1,1 +1,1 @@
-<!-- .slide: data-background="resources/emily.png" -->
+<!-- .slide: data-background="resources/emily.jpg" -->
