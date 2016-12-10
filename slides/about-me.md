@@ -1,6 +1,6 @@
 ##  Who am I?
 
-* Senior Web Engineer @ [10up](http://10up.com)
+* Director of Technology @ [Growella](https://growella.com)
 * Open-source contributor
 * Husband + (new) father
 * Coffee roaster
