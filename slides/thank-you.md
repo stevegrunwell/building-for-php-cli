@@ -5,3 +5,4 @@ Steve Grunwell<br>
 [growella.com](https://growella.com)
 
 [stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)<!-- .element: class="slides-link" -->
+[joind.in/talk/dce28](https://joind.in/talk/dce28)<!-- .element: class="slides-link" -->
