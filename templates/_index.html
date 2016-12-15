@@ -78,8 +78,7 @@
               { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( '[data-html]' ) || !!document.querySelector( 'pre code' ) || !!document.querySelector( '[data-markdown]' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
               { src: 'bower_components/reveal.js/plugin/zoom-js/zoom.js', async: true },
               { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
-              { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } },
-              { src: 'js/reveal-ga.min.js', condition: function() { return !window.location.host.match(/^localhost:/i); } }
+              { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); } }
             ]
           });
 
