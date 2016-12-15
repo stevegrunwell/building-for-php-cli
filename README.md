@@ -25,5 +25,6 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
+* [Nomad PHP (EU)](https://nomadphp.com/nomadphp-2016-12-eu/) – December 15, 2016 ([joind.in](https://joind.in/talk/dce28))
 * [php[tek] 2016](https://tek.phparch.com/speakers/#66432) – May 27, 2016 ([joind.in](https://joind.in/talk/ce9a4))
 * [Columbus PHP Meetup](http://www.meetup.com/phpphp/events/229434721/) – April 13, 2016 ([joind.in](https://joind.in/talk/e9465))

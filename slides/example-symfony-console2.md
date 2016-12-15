@@ -17,3 +17,9 @@ protected function configure()
 		);
 }
 ```
+
+Note:
+
+The configure method defines what our command looks like:
+
+Its name, description, and arguments are defined here.

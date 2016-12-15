@@ -10,3 +10,9 @@
 <?php
 	// Do stuff
 ```
+
+Note:
+
+Writing CLI scripts can be great for security, as you're not inadvertently exposing APIs
+
+Out of the box, most web servers will give up after 30 seconds. The PHP CLI can run indefinitely.

@@ -16,3 +16,7 @@ if ($name) {
 putenv('DEMO_NAME=' . $name);
 passthru('echo $DEMO_NAME');
 ```
+
+Note:
+
+Another neat trick is the ability to access environment variables from within your PHP script.

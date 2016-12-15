@@ -6,3 +6,9 @@
 	* Scaffolding
 	* Other code changes
 * <!-- .element: class="fragment" -->"#YOLO scripts"
+
+Note:
+
+Other code changes like schema updates, table seeding, etc.
+
+YOLO scripts = scripts you're only going to run once (or a small number) of times.
