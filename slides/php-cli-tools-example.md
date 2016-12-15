@@ -15,3 +15,11 @@ for ($i = 1; $i <= $limit; $i++) {
 	cli\line($i . $suffix);
 }
 ```
+
+Note:
+
+Here's another sample program, this time using the PHP CLI Tools library maintained by the WP-CLI team.
+
+Ask how high we should count (with a default of 10) and get a yes/no prompt for volume.
+
+Then we run a simple for-loop until we reach the limit the user provided.

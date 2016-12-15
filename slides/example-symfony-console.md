@@ -12,3 +12,7 @@ class SymfonyExample extends Command
 {
 	// ...
 ```
+
+Note:
+
+To create a new Symfony console command, we're going to extend the Command class and define at least two methods: configure() and execute()

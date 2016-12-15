@@ -1,5 +1,4 @@
 [
-    "intro.md",
     "index.md",
     [
         "about-me.md",
@@ -31,9 +30,11 @@
         "writing-your-own-scripts.md",
         "symfony-console.md",
         "php-cli-tools.md",
+        "types-of-arguments.md",
         "argv.md",
         "argc.md",
         "args.md",
+        "getopt.md",
         "system-commands.md",
         "system-commands2.md",
         "system-commands3.md",

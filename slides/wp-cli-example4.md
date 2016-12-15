@@ -14,3 +14,9 @@ $ wp example-command latest-posts-by-user admin
 +-----+---------------+---------------------+
 ```
 <!-- .element: class="fragment" -->
+
+Note:
+
+When you're working on the CLI, it's really great to be able to see data like this.
+
+What's even nicer is that if we pipe this to something else or save it down to a file, it automatically treats the data as a CSV. This is just a great example of composability.

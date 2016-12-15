@@ -11,4 +11,4 @@
 
 Note:
 
-If you require multiple lines of output, use shell_exec()
+A very practical use-case for passthru(): using tools like Gifsicle to resize animated gifs uploaded to your app.
