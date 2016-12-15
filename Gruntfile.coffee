@@ -83,13 +83,18 @@ module.exports = (grunt) ->
                         'js/**'
                         'css/*.css'
                         'resources/**'
-                        'node_modules/reveal-ga/dist/**'
                     ]
                     dest: 'dist/'
                 },{
                     expand: true
                     src: ['index.html']
                     dest: 'dist/'
+                    filter: 'isFile'
+                },
+                {
+                    expand: false
+                    src: ['node_modules/reveal-ga/dist/reveal-ga.min.js']
+                    dest: 'dist/js/reveal-ga.min.js'
                     filter: 'isFile'
                 }]
 
