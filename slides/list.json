@@ -30,6 +30,7 @@
         "writing-your-own-scripts.md",
         "symfony-console.md",
         "php-cli-tools.md",
+        "types-of-arguments.md",
         "argv.md",
         "argc.md",
         "args.md",
