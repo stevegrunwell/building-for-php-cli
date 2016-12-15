@@ -15,3 +15,7 @@ public function latest_posts_by_user( $args, $assoc_args ) {
 	// Do something!
 }
 ```
+
+Note:
+
+Each command is given a DocBlock, which defines the available arguments, provides examples, and lets us use some other DocBlock tags like @subcommand.

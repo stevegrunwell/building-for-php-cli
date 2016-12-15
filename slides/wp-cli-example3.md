@@ -15,3 +15,13 @@ public function latest_posts_by_user( $args, $assoc_args ) {
 	return WP_CLI\Utils\format_items( 'table', $posts, $fields );
 }
 ```
+
+Note:
+
+Inside the function, we have two arguments: $args and $assoc_args
+
+$args contains the positional arguments.
+
+$assoc_args contains the associative arguments.
+
+WP-CLI also has some nice formatters, like format_items(), which will let us generate an ASCII table.

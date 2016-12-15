@@ -4,3 +4,7 @@
 * Open-source contributor
 * Husband + (new) father
 * Coffee roaster
+
+Note:
+
+New media site covering topics in life, career, and money.
