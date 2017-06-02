@@ -1,0 +1,1 @@
+<!-- .slide: data-background-image="resources/music-city-code.png" data-background-size="contain" data-background-color="#fff" -->

@@ -4,9 +4,10 @@ Executing PHP from the command line enables us to interact with our applications
 
 Attendees will be introduced to popular PHP CLI tools and their default capabilities. We'll discuss characteristics of good CLI scripts, strong use-cases for writing custom commands, then write several CLI programs across different platforms.
 
-#### [View slides](http://stevegrunwell.github.io/building-for-php-cli)
+**[View slides](http://stevegrunwell.github.io/building-for-php-cli)**
 
 This presentation also has [a companion repository, full of executable examples from this presentation](https://github.com/stevegrunwell/php-cli-examples).
+
 
 ## Notes and links
 
@@ -16,6 +17,7 @@ This presentation also has [a companion repository, full of executable examples 
 * [Exit Codes with Special Meanings](http://tldp.org/LDP/abs/html/exitcodes.html) - The Linux Documentation Project
 * [Understanding Exit Codes and How to Use Them in Bash Scripts](http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/) - Article by Benjamin Cane
 
+
 ### Platform-specific CLI tools
 
 * [WP-CLI](http://wp-cli.org/)
@@ -23,8 +25,10 @@ This presentation also has [a companion repository, full of executable examples 
 * [Drush](http://www.drush.org/en/master/)
 * [Joomlatools Console](https://www.joomlatools.com/developer/tools/console/)
 
+
 ## Presentation History
 
+* [Music City Code 2017](https://www.musiccitycode.com/) - June 3, 2017
 * [CodeMash 2017](http://www.codemash.org/) - January 13, 2017
 * [Nomad PHP (EU)](https://nomadphp.com/nomadphp-2016-12-eu/) – December 15, 2016 ([joind.in](https://joind.in/talk/dce28))
 * [php[tek] 2016](https://tek.phparch.com/speakers/#66432) – May 27, 2016 ([joind.in](https://joind.in/talk/ce9a4))
