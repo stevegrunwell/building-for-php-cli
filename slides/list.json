@@ -36,6 +36,7 @@
         "argc.md",
         "getopt.md",
         "system-commands.md",
+        "spidey-sense.md",
         "system-commands2.md",
         "system-commands3.md",
         "escaping-shell-commands.md",
