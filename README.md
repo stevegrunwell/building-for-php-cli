@@ -4,7 +4,7 @@ Executing PHP from the command line enables us to interact with our applications
 
 Attendees will be introduced to popular PHP CLI tools and their default capabilities. We'll discuss characteristics of good CLI scripts, strong use-cases for writing custom commands, then write several CLI programs across different platforms.
 
-**[View slides](http://stevegrunwell.github.io/building-for-php-cli)**
+:sparkles: **[View slides](http://stevegrunwell.github.io/building-for-php-cli)** :sparkles:
 
 This presentation also has [a companion repository, full of executable examples from this presentation](https://github.com/stevegrunwell/php-cli-examples).
 
@@ -28,8 +28,9 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
+* [php[tek] 2018](https://tek18.phparch.com/speakers/steve-grunwell/) - May 31, 2018 ([joind.in](https://joind.in/talk/c6025))
 * [Music City Code 2017](https://www.musiccitycode.com/) - June 3, 2017
 * [CodeMash 2017](http://www.codemash.org/) - January 13, 2017
 * [Nomad PHP (EU)](https://nomadphp.com/nomadphp-2016-12-eu/) – December 15, 2016 ([joind.in](https://joind.in/talk/dce28))
-* [php[tek] 2016](https://tek.phparch.com/speakers/#66432) – May 27, 2016 ([joind.in](https://joind.in/talk/ce9a4))
+* [php[tek] 2016](https://tek16.phparch.com/speakers/#66432) – May 27, 2016 ([joind.in](https://joind.in/talk/ce9a4))
 * [Columbus PHP Meetup](http://www.meetup.com/phpphp/events/229434721/) – April 13, 2016 ([joind.in](https://joind.in/talk/e9465))
