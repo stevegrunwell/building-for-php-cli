@@ -4,7 +4,5 @@
 $ php examples/SymfonyExample.php symfony-example Steve
 ```
 
-```sh
-> Symfony says "hello", Steve!
-```
-<!-- .element: class="fragment" -->
+<pre><output class="hljs lang-sh">> <span class="hljs-title">Symfony says "hello", Steve!</span></output></pre>
+<!-- .element: class="fragment" style="color: yellow !important" -->

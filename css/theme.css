@@ -150,10 +150,10 @@ body {
   word-wrap: break-word;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
 
-.reveal code {
+.reveal code, .reveal output {
   font-family: monospace; }
 
-.reveal pre code {
+.reveal pre code, .reveal pre output {
   display: block;
   padding: 5px;
   overflow: auto;
@@ -307,7 +307,7 @@ body {
     box-shadow: none;
     max-width: 50%;
     max-height: 1.5em; }
-  .slides h1 code, .slides h2 code, .slides h3 code, .slides h4 code, .slides h5 code, .slides h6 code {
+  .slides h1 code, .slides h1 .reveal output, .reveal .slides h1 output, .slides h2 code, .slides h2 .reveal output, .reveal .slides h2 output, .slides h3 code, .slides h3 .reveal output, .reveal .slides h3 output, .slides h4 code, .slides h4 .reveal output, .reveal .slides h4 output, .slides h5 code, .slides h5 .reveal output, .reveal .slides h5 output, .slides h6 code, .slides h6 .reveal output, .reveal .slides h6 output {
     text-transform: none; }
 
 .slides a:hover img {

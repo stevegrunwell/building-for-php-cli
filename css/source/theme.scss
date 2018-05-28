@@ -65,6 +65,10 @@ section.has-dark-background {
         color: darken($linkColor, 15%);
       }
     }
+
+    output {
+        @extend code;
+    }
 }
 
 .slides {
