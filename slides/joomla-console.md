@@ -1,7 +1,5 @@
-###  Joomla Console
+### [Joomla Console](https://www.joomlatools.com/developer/tools/console/)
 
-[joomlatools.com/developer/tools/console](https://www.joomlatools.com/developer/tools/console/)
-
-* CLI framework for Joomla!
-* Manage Sites, Extensions, Databases, and Apache vhosts
-* List, purge, and clear cache contents
+* <!-- .element: class="fragment" --> CLI framework for Joomla!
+* <!-- .element: class="fragment" --> Manage Sites, Extensions, Databases, and Apache vhosts
+* <!-- .element: class="fragment" --> List, purge, and clear cache contents

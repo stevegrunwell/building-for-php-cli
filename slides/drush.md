@@ -1,7 +1,5 @@
-### Drush
+### [Drush](http://www.drush.org/en/master/)
 
-[drush.org](http://www.drush.org/en/master/)
-
-* Short for "Drupal Shell"
-* One of the OG CLI tools for PHP CMSs
-* Manage themes, modules, system updates, etc.
+* <!-- .element: class="fragment" --> Short for "Drupal Shell"
+* <!-- .element: class="fragment" --> One of the OG CLI tools for PHP CMSs
+* <!-- .element: class="fragment" --> Manage themes, modules, system updates, etc.

@@ -1,8 +1,12 @@
-### Symfony Console Component
+### [Symfony Console Component](http://symfony.com/doc/current/components/console/index.html)
 
-* Robust library for writing PHP CLI scripts
-* Helpers for all sorts of input and output options
-* Designed to be easily tested
-* Integrates with other Symfony components (naturally)
+* <!-- .element: class="fragment" --> CLI framework of choice
+* <!-- .element: class="fragment" --> Handlers for input & output
+* <!-- .element: class="fragment" --> Born to be tested
 
-[symfony.com/doc/current/components/console](http://symfony.com/doc/current/components/console/index.html)
+Note:
+
+* De facto tool for writing PHP CLI scripts
+* Ships with methods for all sorts of input and output handling
+* Designed from the ground-up to be easily tested
+* Easily integrates with other Symfony components
