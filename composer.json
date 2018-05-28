@@ -1,0 +1,30 @@
+{
+    "name": "stevegrunwell/building-for-the-php-cli",
+    "description": "Slides for \"Building for the PHP Command Line Interface\"",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Grunwell",
+            "homepage": "https://stevegrunwell.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/stevegrunwell/php-cli-examples"
+        }
+    ],
+    "require": {
+        "stevegrunwell/php-cli-examples": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "npm install",
+            "bower install"
+        ],
+        "present": [
+            "grunt"
+        ]
+    }
+}

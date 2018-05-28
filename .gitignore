@@ -1,6 +1,7 @@
 node_modules
 bower_components
 dist
+vendor
 *.log
 .sass-cache
 /index.html
