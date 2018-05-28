@@ -4,3 +4,7 @@
 * <!-- .element: class="fragment" --> Manage posts, terms, users, and more
 * <!-- .element: class="fragment" --> Inspect and maintain cron, caches, and transients
 * <!-- .element: class="fragment" --> Extensible for themes + plugins
+
+Note:
+
+* Recently made an official part of the WordPress project
