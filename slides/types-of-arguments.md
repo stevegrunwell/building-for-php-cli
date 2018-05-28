@@ -16,10 +16,6 @@ $ my-command -n=100 --type foo --verbose
 
 Note:
 
-Important to establish common language before we go further around accepting input:
-
-Args (or "positional args") are passed in a specific order to the command
-
-Options (sometimes called "associate args", but that's not really correct) have one or two dashes before them and either act as key:value pairs or as flags (such as --verbose)
-
-Single dash/letter is a convention.
+* Arguments (a.k.a. "associative arguments")
+* Options (sometimes called "associative arguments") have one or two dashes before them
+    - Act as either key:value pairs or as flags (e.g. --verbose)
