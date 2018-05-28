@@ -1,4 +1,4 @@
-### `$argv`
+### [`$argv`](http://php.net/manual/en/reserved.variables.argv.php)
 
 * <!-- .element: class="fragment" --> Arguments passed to script as array
 * <!-- .element: class="fragment" --> Includes script name!

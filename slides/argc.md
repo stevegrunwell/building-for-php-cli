@@ -1,4 +1,4 @@
-### `$argc`
+### [`$argc`](http://php.net/manual/en/reserved.variables.argc.php)
 
 * <!-- .element: class="fragment" --> # of arguments
 * <!-- .element: class="fragment" --> Also includes script name!
