@@ -1,8 +1,20 @@
 ### `$argv`
 
-* Retrieves the arguments passed to the PHP script as an array.
-* The script name will be included, so this array should never be empty.
+* <!-- .element: class="fragment" --> Arguments passed to script as array
+* <!-- .element: class="fragment" --> Includes script name!
+
+```php
+$ php -r "var_export(\$argv);" foo bar
+
+array (
+    0 => 'Standard input code',
+    1 => 'foo',
+    2 => 'bar',
+)
+```
+<!-- .element: class="fragment" -->
 
 Note:
 
-ARGument Values
+* ARGV === ARGument Values
+* Should never be empty, since the script name is 0
