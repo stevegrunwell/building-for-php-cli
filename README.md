@@ -4,7 +4,7 @@ Executing PHP from the command line enables us to interact with our applications
 
 Attendees will be introduced to popular PHP CLI tools and their default capabilities. We'll discuss characteristics of good CLI scripts, strong use-cases for writing custom commands, then write several CLI programs across different platforms.
 
-:sparkles: **[View slides](http://stevegrunwell.github.io/building-for-php-cli)** :sparkles:
+:sparkles: **[View slides](https://stevegrunwell.github.io/building-for-php-cli)** :sparkles:
 
 This presentation also has [a companion repository, full of executable examples from this presentation](https://github.com/stevegrunwell/php-cli-examples).
 
