@@ -1,6 +1,6 @@
 ## Who am I?
 
-* Senior Software Engineer @ [Liquid Web](https://www.liquidweb.com)
-* Open-source contributor
-* Husband + (new) father
-* Coffee roaster
+* <!-- .element: class="fragment" --> Senior Software Engineer @ [Liquid Web](https://www.liquidweb.com)
+* <!-- .element: class="fragment" --> Open-source contributor
+* <!-- .element: class="fragment" --> Husband + (new) father
+* <!-- .element: class="fragment" --> Coffee roaster + homebrewer

@@ -1,7 +1,14 @@
-###  PHP-CLI Tools
+### [PHP-CLI Tools](https://github.com/wp-cli/php-cli-tools)
 
-* Functions to handle input and output, including progress indicators
-* Tabular and Tree displays for output
-* Maintained by the WP-CLI team
+* <!-- .element: class="fragment" --> Simplify input + output
+    - <!-- .element: class="fragment" --> Tabular + tree displays
+    - <!-- .element: class="fragment" --> Progress indicators
+* <!-- .element: class="fragment" --> Maintained by the WP-CLI team
 
-[github.com/wp-cli/php-cli-tools](https://github.com/wp-cli/php-cli-tools)
+Note:
+
+* Library that simplifies input + output
+    - Prompts, menus, arguments
+    - Output formatting
+    - Tabular + tree displays
+    - Progress indicators

@@ -1,28 +1,28 @@
-### `getopt()`
+### [`getopt()`](http://php.net/manual/en/function.getopt.php)
 
 ```php
-var_dump(getopt(
-	'a:b',
-	array('foo:', 'verbose')
+# myscript.php
+var_export(getopt(
+	'a:bc',
+	['foo:', 'verbose']
 ));
 ```
 
 ```bash
-$ myscript -a=hello -b --foo=bar --verbose
+$ myscript -a=hello -b -d --foo=bar --verbose
 
-array(4) {
-  'a' =>
-  string(5) "hello"
-  'b' =>
-  bool(false)
-  'foo' =>
-  string(3) "bar"
-  'verbose' =>
-  bool(false)
-}
+array(
+  'a' => 'hello'
+  'b' => false,
+  'foo' => 'bar',
+  'verbose' => false,
+)
 ```
 <!-- .element: class="fragment" -->
 
 Note:
 
-PHP also has the getopt() function for retrieving options passed via the CLI, though I'll admit it's not the prettiest syntax.
+* Retrieves options passed via CLI
+* Define expected arguments, returns array of those arguments that are present
+    - Only options specified will be included
+    - Flags will be FALSE, but present!

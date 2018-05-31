@@ -1,8 +1,10 @@
-### WP-CLI
+### [WP-CLI](http://wp-cli.org/)
 
-[wp-cli.org](http://wp-cli.org/)
+* <!-- .element: class="fragment" --> Install core, themes, plugins, etc.
+* <!-- .element: class="fragment" --> Manage posts, terms, users, and more
+* <!-- .element: class="fragment" --> Inspect and maintain cron, caches, and transients
+* <!-- .element: class="fragment" --> Extensible for themes + plugins
 
-* Install core, themes, plugins, etc.
-* Manage posts, terms, users, and more
-* Inspect and maintain cron, caches, and transients
-* Extensible for themes + plugins
+Note:
+
+* Recently made an official part of the WordPress project

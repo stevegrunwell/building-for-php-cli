@@ -1,6 +1,6 @@
 ### How does it run?
 
-Two ways to invoke PHP on the CLI:
+Invoking PHP on the CLI:
 
 ```sh
 # 1. Pass the file to the php binary

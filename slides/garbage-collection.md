@@ -1,15 +1,12 @@
 ### Garbage Collection
 
-* Unset objects when they're no longer necessary <!-- .element: class="fragment" -->
-* Be judicious with caching <!-- .element: class="fragment" -->
-* Watch the size of arrays that are constantly growing <!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> Clean up objects when you're done <!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> Be judicious with caching
+* <!-- .element: class="fragment" --> Watch for ballooning objects & arrays!
 
 Note:
 
-The garbage collector frees up memory that was previously allocated but no longer needed.
-
-Not something PHP developers normally have to worry about, because it gets cleaned up for us automatically at the end of each request.
-
-You can help the garbage collector by explicitly saying "I'm done with this" by using unset().
-
-Try to cache values in variables whenever possible, but be careful about how big those caches get; if you're running something in a big loop, consider null-ing out that variable after a certain number of iterations.
+* Garbage collector frees up memory that was previously allocated but no longer needed.
+* PHP normally handles this automatically @ end of request
+* Help the garbage collector by explicitly unsetting variables
+* Cache in variables when appropriate, but be aware the size can balloon

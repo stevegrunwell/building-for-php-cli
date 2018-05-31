@@ -1,3 +1,4 @@
+<!-- .slide: class="title-slide" -->
 # Building for the PHP Command Line Interface
 
 Steve Grunwell<br>
