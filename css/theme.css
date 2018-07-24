@@ -346,10 +346,13 @@ body {
   .slides dl dd + dt + dd {
     margin-top: .5em; }
 
-.slides .seamless img {
+.slides .seamless, .slides .seamless img {
   background: none;
   border: none;
   box-shadow: none; }
+
+.slides .no-text-transform {
+  text-transform: none; }
 
 .slides .title-slide h1 {
   font-size: 1.6em;

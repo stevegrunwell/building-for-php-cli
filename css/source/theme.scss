@@ -141,11 +141,15 @@ section.has-dark-background {
     }
 
     .seamless {
-        img {
+        &, img {
             background: none;
             border: none;
             box-shadow: none;
         }
+    }
+
+    .no-text-transform {
+        text-transform: none;
     }
 
     .title-slide {
