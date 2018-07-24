@@ -29,6 +29,7 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
+* [PHPDetroit](https://phpdetroit.io/) - July 28, 2018 ([joind.in](https://joind.in/talk/e6d00))
 * [php[tek] 2018](https://tek18.phparch.com/speakers/steve-grunwell/) - May 31, 2018 ([joind.in](https://joind.in/talk/c6025))
 * [Music City Code 2017](https://www.musiccitycode.com/) - June 3, 2017
 * [CodeMash 2017](http://www.codemash.org/) - January 13, 2017
