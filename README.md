@@ -29,9 +29,9 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
-* [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([joind.in](https://joind.in/talk/ed2e4))
-* [PHPDetroit](https://phpdetroit.io/) - July 28, 2018 ([joind.in](https://joind.in/talk/e6d00))
-* [php[tek] 2018](https://tek18.phparch.com/speakers/steve-grunwell/) - May 31, 2018 ([joind.in](https://joind.in/talk/c6025))
+* [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/southeastphp-2018/slides.pdf), [joind.in](https://joind.in/talk/ed2e4))
+* [PHPDetroit](https://phpdetroit.io/) - July 28, 2018 ([PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phpdetroit-2018/slides.pdf), [joind.in](https://joind.in/talk/e6d00))
+* [php[tek] 2018](https://tek18.phparch.com/speakers/steve-grunwell/) - May 31, 2018 ([PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phptek-2018/slides.pdf), [joind.in](https://joind.in/talk/c6025))
 * [Music City Code 2017](https://www.musiccitycode.com/) - June 3, 2017
 * [CodeMash 2017](http://www.codemash.org/) - January 13, 2017
 * [Nomad PHP (EU)](https://nomadphp.com/nomadphp-2016-12-eu/) – December 15, 2016 ([joind.in](https://joind.in/talk/dce28))
