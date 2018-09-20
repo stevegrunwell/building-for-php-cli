@@ -20,9 +20,11 @@ array(
 ```
 <!-- .element: class="fragment" -->
 
+[php.net/manual/en/function.getopt.php](http://php.net/manual/en/function.getopt.php)<!-- .element: class="fragment" -->
+
 Note:
 
 * Retrieves options passed via CLI
+* Hold-over from C, and most frameworks have their own abstraction for this
 * Define expected arguments, returns array of those arguments that are present
-    - Only options specified will be included
-    - Flags will be FALSE, but present!
+* Best to refer to the manual, as it's needlessly complicated
