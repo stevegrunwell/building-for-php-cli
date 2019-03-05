@@ -1,13 +1,26 @@
 ### Environment Variables
 
-`export DEMO_NAME="Steve"`
-```html
-> Hey, I recognize you, Steve!
-> My old friend, Steve!
-```
+```sh
+$ API_KEY=abc123 php my-script.php
 
-<br>Otherwise:
-```html
-> I don't know you, so I'll just call you Fred.
-> Fred
+API Key: abc123
 ```
+<!-- .element: class="fragment" -->
+
+```sh
+$ php my-script.php xyz789
+
+API Key: xyz789
+```
+<!-- .element: class="fragment" -->
+
+```sh
+$ API_KEY=abc123 php my-script.php xyz789
+
+API Key: abc123
+```
+<!-- .element: class="fragment" -->
+
+Note:
+
+Since the script was checking for the environment variable first, that will take precedence when the script is run.
