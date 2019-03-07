@@ -1,22 +1,24 @@
 ### Environment Variables
 
 ```php
-$name = getenv('DEMO_NAME');
+$apiKey = getenv('API_KEY');
 
-if ($name) {
-	printf('Hey, I recognize you, %s!' . PHP_EOL, $name);
-	$name = sprintf('My old friend, %s!', $name);
-
-} else {
-	echo "I don't know you, so I'll just call you Fred." . PHP_EOL;
-	$name = 'Fred';
+// It wasn't provided via environment variable.
+if (! $apiKey && ! empty($argv[1])) {
+    $apiKey = $argv[1];
 }
 
-// Update DEMO_NAME and call the system's echo program.
-putenv('DEMO_NAME=' . $name);
-passthru('echo $DEMO_NAME');
+// Neither environment nor argument.
+if (! $apiKey) {
+    echo 'An API key must be provided!';
+    exit(1);
+}
+
+echo "API Key: $apiKey";
 ```
 
 Note:
 
 Another neat trick is the ability to access environment variables from within your PHP script.
+
+Can use both getenv() and putenv().

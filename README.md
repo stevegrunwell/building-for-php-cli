@@ -29,12 +29,13 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
-* [WavePHP 2018](https://wavephp.com/) — September 20, 2018 ([join.in](https://joind.in/talk/6908c), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/wavephp-2018/slides.pdf))
-* [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/southeastphp-2018/slides.pdf), [joind.in](https://joind.in/talk/ed2e4))
-* [PHPDetroit](https://phpdetroit.io/) - July 28, 2018 ([PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phpdetroit-2018/slides.pdf), [joind.in](https://joind.in/talk/e6d00))
-* [php[tek] 2018](https://tek18.phparch.com/speakers/steve-grunwell/) - May 31, 2018 ([PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phptek-2018/slides.pdf), [joind.in](https://joind.in/talk/c6025))
+* [Midwest PHP 2019](https://2019.midwestphp.org/) — March 8, 2019 ([Joind.in](https://joind.in/talk/b9a05))
+* [WavePHP 2018](https://wavephp.com/) — September 20, 2018 ([Joind.in](https://joind.in/talk/6908c), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/wavephp-2018/slides.pdf))
+* [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([Joind.in](https://joind.in/talk/ed2e4), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/southeastphp-2018/slides.pdf))
+* [PHPDetroit](https://phpdetroit.io/) - July 28, 2018 ([Joind.in](https://joind.in/talk/e6d00), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phpdetroit-2018/slides.pdf))
+* [php[tek] 2018](https://tek18.phparch.com/speakers/steve-grunwell/) - May 31, 2018 ([Joind.in](https://joind.in/talk/c6025), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phptek-2018/slides.pdf))
 * [Music City Code 2017](https://www.musiccitycode.com/) - June 3, 2017
 * [CodeMash 2017](http://www.codemash.org/) - January 13, 2017
-* [Nomad PHP (EU)](https://nomadphp.com/nomadphp-2016-12-eu/) – December 15, 2016 ([joind.in](https://joind.in/talk/dce28))
-* [php[tek] 2016](https://tek16.phparch.com/speakers/#66432) – May 27, 2016 ([joind.in](https://joind.in/talk/ce9a4))
-* [Columbus PHP Meetup](http://www.meetup.com/phpphp/events/229434721/) – April 13, 2016 ([joind.in](https://joind.in/talk/e9465))
+* [Nomad PHP (EU)](https://nomadphp.com/nomadphp-2016-12-eu/) – December 15, 2016 ([Joind.in](https://joind.in/talk/dce28))
+* [php[tek] 2016](https://tek16.phparch.com/speakers/#66432) – May 27, 2016 ([Joind.in](https://joind.in/talk/ce9a4))
+* [Columbus PHP Meetup](http://www.meetup.com/phpphp/events/229434721/) – April 13, 2016 ([Joind.in](https://joind.in/talk/e9465))

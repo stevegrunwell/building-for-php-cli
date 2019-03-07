@@ -1,7 +1,8 @@
 ## Thank You!
 
 Steve Grunwell<br>
-[stevegrunwell.com](https://stevegrunwell.com)<br>
-[liquidweb.com](https://www.liquidweb.com)
+Senior Software Engineer, Liquid Web
 
-[stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)<!-- .element: class="slides-link" -->
+<p class="slides-link">
+    [stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)<br>[joind.in/talk/b9a05](https://joind.in/talk/b9a05)
+</p>
