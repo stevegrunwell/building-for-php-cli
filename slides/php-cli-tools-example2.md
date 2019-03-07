@@ -4,14 +4,8 @@
 $ php examples/PHPCliToolsExample.php
 ```
 
-```html
-$ php examples/PHPCliToolsExample.php
-How high should I count? [10]: 5
-Shall I shout it? [y/N]y
-1!
+<pre class="hljs lang-html fragment"><code>How high should I count? [10]: 5</code><code class="fragment">Shall I shout it? [y/N]y</code><code class="fragment">1!
 2!
 3!
 4!
-5!
-```
-<!-- .element: class="fragment" -->
+5!</code></pre>

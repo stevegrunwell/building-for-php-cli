@@ -1,10 +1,6 @@
 [
     "index.md",
     [
-        "about-me.md",
-        "emily.md"
-    ],
-    [
         "why-the-cli.md",
         "benefits.md",
         "how-does-it-run.md",
@@ -42,10 +38,10 @@
         "escaping-shell-commands.md",
         "escapeshellcmd.md",
         "escaping-arguments.md",
-        "environment-variables.md",
-        "environment-variables2.md",
         "exit-codes.md",
         "exit-codes2.md",
+        "environment-variables.md",
+        "environment-variables2.md",
         "daemons.md"
     ],
     [

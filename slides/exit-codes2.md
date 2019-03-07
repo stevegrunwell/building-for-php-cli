@@ -6,12 +6,19 @@ if (! isset($argv['1'])) {
 	exit(1);
 }
 
-// Do something awesome
+echo "Script ran!";
 ```
 
 ```sh
 $ php my-script.php foo && echo "Success"
+> Script ran!
+> Success
+```
+<!-- .element: class="fragment" -->
+
+```sh
 $ php my-script.php && echo "You will never see this"
+> Missing required argument!
 ```
 <!-- .element: class="fragment" -->
 

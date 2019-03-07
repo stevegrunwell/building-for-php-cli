@@ -15,7 +15,7 @@ exec('greet-user ' . $name);
 ```
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
-##### Much Better:
+Much Better:
 <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ```php
