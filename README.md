@@ -29,7 +29,7 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
-* [Midwest PHP 2019](https://2019.midwestphp.org/) — March 8, 2019 ([Joind.in](https://joind.in/talk/b9a05))
+* [Midwest PHP 2019](https://2019.midwestphp.org/) — March 8, 2019 ([Joind.in](https://joind.in/talk/b9a05), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/midwest-php/slides.pdf))
 * [WavePHP 2018](https://wavephp.com/) — September 20, 2018 ([Joind.in](https://joind.in/talk/6908c), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/wavephp-2018/slides.pdf))
 * [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([Joind.in](https://joind.in/talk/ed2e4), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/southeastphp-2018/slides.pdf))
 * [PHPDetroit](https://phpdetroit.io/) - July 28, 2018 ([Joind.in](https://joind.in/talk/e6d00), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phpdetroit-2018/slides.pdf))
