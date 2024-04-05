@@ -14,21 +14,24 @@ This presentation also has [a companion repository, full of executable examples 
 * [Symfony Console Component](http://symfony.com/doc/current/components/console/introduction.html) - Project documentation
 * [PHP-CLI Tools](https://github.com/wp-cli/php-cli-tools) - GitHub repository
 * [CLImate](https://climate.thephpleague.com/) - Project documentation
+* [Flysystem](https://flysystem.thephpleague.com) - Popular package for filesystem operations across environments
 * [Building PHP Daemons and Long Running Processes](https://prezi.com/pymsnzwlieqt/building-php-daemons-and-long-running-processes-tek15/) - Talk from php[tek] 2015 by [Tim Lytle](http://timlytle.net)
-* [Exit Codes with Special Meanings](http://tldp.org/LDP/abs/html/exitcodes.html) - The Linux Documentation Project
+* [What are Exit Codes in Linux?](https://itsfoss.com/linux-exit-codes/) - Explanation of standard exit codes and their meanings
 * [Understanding Exit Codes and How to Use Them in Bash Scripts](http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/) - Article by Benjamin Cane
+* [Cropping and Resizing Animated Gifs with Gifsicle](https://stevegrunwell.com/blog/cropping-resizing-gifsicle/) - Blog post explaining how to create animated thumbnails for gifs, which relies on calling [Gifsicle](https://www.lcdf.org/gifsicle/) via [`passthru()`](https://www.php.net/manual/en/function.passthru.php)
 
 
 ### Platform-specific CLI tools
 
-* [WP-CLI](http://wp-cli.org/)
-* [Laravel Artisan](https://laravel.com/docs/5.1/artisan)
-* [Drush](http://www.drush.org/en/master/)
-* [Joomlatools Console](https://www.joomlatools.com/developer/tools/console/)
+* [WP-CLI](https://wp-cli.org)
+* [Laravel Artisan](https://laravel.com/docs/master/artisan)
+* [Drush](https://www.drush.org)
+* [Joomlatools Console](https://www.joomlatools.com/developer/tools/console)
 
 
 ## Presentation History
 
+* [php[tek] 2024](https://tek.phparch.com) — April 24, 2024
 * [Midwest PHP 2019](https://2019.midwestphp.org/) — March 8, 2019 ([Joind.in](https://joind.in/talk/b9a05), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/midwest-php/slides.pdf))
 * [WavePHP 2018](https://wavephp.com/) — September 20, 2018 ([Joind.in](https://joind.in/talk/6908c), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/wavephp-2018/slides.pdf))
 * [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([Joind.in](https://joind.in/talk/ed2e4), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/southeastphp-2018/slides.pdf))

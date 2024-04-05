@@ -1,0 +1,21 @@
+{
+    "title": "Building for the PHP Command Line Interface",
+    "theme": "white",
+    "highlightTheme": "a11y-dark",
+    "css": [
+        "resources/styles.css"
+    ],
+    "scripts": [
+        "resources/scripts.js"
+    ],
+    "absoluteUrl": "https://stevegrunwell.github.io/building-for-php-cli/",
+    "revealOptions": {
+        "controls": true,
+        "controlsTutorial": false,
+        "pause": true,
+        "pdfSeparateFragments": false,
+        "progress": false,
+        "slideNumber": false,
+        "transition": "none"
+    }
+}
