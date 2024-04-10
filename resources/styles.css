@@ -17,6 +17,7 @@
 
 .reveal {
     font-family: var(--r-body-font);
+    background: url('./background.webp') center center repeat;
 }
 
 /* Special styling for the title slide. */
@@ -38,18 +39,6 @@
     display: block;
     margin-top: 2em;
     font-size: .86em;
-}
-
-/* Invert colors for slides with dark backgrounds. */
-.reveal .dark-bg {
-    --r-heading-color: #fff;
-    --r-main-color: #fff;
-
-    color: var(--r-main-color);
-}
-
-.reveal .dark-bg a {
-    color: inherit;
 }
 
 /* Persistent footer */
@@ -94,17 +83,17 @@
     display: block;
 }
 
-/* Blockquotes */
+/* Blockquotes and figures */
 .reveal blockquote {
     width: 90%;
-    font-size: 1.2em;
     box-shadow: none;
 }
 
 .reveal blockquote::before {
     content: '\201C';
     position: absolute;
-    top: .3em;
+    top: .5em;
+    left: -.3em;
     font-family: Georgia, serif;
     font-size: 2.25em;
     line-height: 0;
@@ -115,12 +104,13 @@
     margin-bottom: 0;
 }
 
+.reveal cite,
 .reveal figure figcaption {
     font-size: .8em;
     color: var(--subdued-text-color);
 }
 
-.reveal figure cite:before {
+.reveal cite:before {
     content: '—';
 }
 
@@ -170,7 +160,18 @@
     border-radius: 50%;
 }
 
+/* Allow definition lists to be centered */
+.reveal dl {
+    margin-left: 0;
+    text-align: center;
+}
+
+.reveal dl dd {
+    margin-left: 0;
+}
+
 /* Extra space between elements in a definition list */
+.reveal dl + p,
 dd + dt {
     margin-top: 1em;
 }
@@ -178,4 +179,24 @@ dd + dt {
 /* Helper to disable text-transform: uppercase on headings */
 .no-transform {
     text-transform: none;
+}
+
+/* Hide text that's hidden for the sake of presentation. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+}
+
+/* Don't bold types for variables */
+code .typehint {
+    font-weight: normal;
+    font-style: italic;
 }

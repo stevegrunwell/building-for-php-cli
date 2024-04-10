@@ -34,3 +34,46 @@ if (window.self === window.top) {
     Reveal.on('ready', toggleFooter);
     Reveal.on('slidechanged', toggleFooter);
 }
+
+/**
+ * Inject our custom highlight.js language (cli).
+ *
+ * This relies on the window.options variable defined in {@see reveal-md/lib/template/reveal.html}.
+ */
+if (typeof window.options !== undefined) {
+    window.options.highlight.beforeHighlight = (hljs) => hljs.registerLanguage('cli', (hljs) => {
+        return {
+            name: 'CLI',
+            case_insensitive: true,
+            contains: [
+                hljs.HASH_COMMENT_MODE,
+                hljs.QUOTE_STRING_MODE,
+                // Bash prompt ($ or ~)
+                {
+                    scope: 'title',
+                    match: /^\s*[\$~]\s+/,
+                },
+                // Boolean operators (&&, ||)
+                {
+                    scope: 'built_in',
+                    match: /(&&|\|\|)/
+                },
+                // Escape characters at the end of a line
+                {
+                    scope: 'built_in',
+                    match: /\\s*$/,
+                },
+                // Single pipes, redirection
+                {
+                    scope: 'built_in',
+                    match: /[\|>]/,
+                },
+                // Command options
+                {
+                    scope: 'variable',
+                    match: /\s-{1,2}[a-z0-9-_]+=?/,
+                }
+            ],
+        };
+    });
+}

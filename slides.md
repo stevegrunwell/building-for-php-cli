@@ -17,9 +17,9 @@ Before we talk about how, let's discuss *why* you might use PHP on the command l
 
 ### Benefits of the CLI
 
-* Interact with your apps, no GUI required
-* Great for setup/maintenance scripts
-* Cron jobs & queues
+* <!-- .element: class="fragment" --> Interact with your apps, no GUI required
+* <!-- .element: class="fragment" --> Great for setup/maintenance scripts
+* <!-- .element: class="fragment" --> Cron jobs & queues
 
 Note:
 
@@ -34,8 +34,8 @@ There are a number of different reasons we might want to interact with our apps 
 
 ### PHP Everywhere!
 
-* Re-use application code
-* Reduce language sprawl
+* <!-- .element: class="fragment" --> Re-use application code
+* <!-- .element: class="fragment" --> Reduce language sprawl
 
 Note:
 
@@ -61,7 +61,7 @@ With the PHP shebang:<!-- .element: class="fragment" data-fragment-index="1" -->
 ```
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
-```sh [1|2]
+```cli [1|2]
 $ chmod +x my-command.php
 $ ./my-command.php
 ```
@@ -186,11 +186,11 @@ Who can tell me what this means?
 
 ### Data Streams
 
-Three default data streams
+Three default data streams:
 
-0. `STDIN` - input
-1. `STDOUT` - output
-2. `STDERR` - errors
+0. <!-- .element: class="fragment" --> STDIN - <u>in</u>put
+1. <!-- .element: class="fragment" --> STDOUT - <u>out</u>put
+2. <!-- .element: class="fragment" --> STDERR - <u>err</u>ors
 
 Note:
 
@@ -208,7 +208,7 @@ Streams can be redirected (e.g. write errors to a log file, send the output of o
 
 ### Data Streams in Practice
 
-```sh [|2-3|4|5|6|7]
+```cli [|2-3|4|5|6|7]
 # Get the number of unique IP addresses in access.log
 $ sudo grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}" \
     /var/log/nginx/access.log \
@@ -260,7 +260,7 @@ Most scripts you come across will generally use 0 or 1: did it succeed or fail (
 
 ### Exit Codes & Boolean Operators
 
-```sh [1-2|4-5|7-8|10-11]
+```cli [1-2|4-5|7-8|10-11]
 # Celebrate a non-zero exit code!
 $ do-something && celebrate
 
@@ -273,6 +273,7 @@ $ (do-something && celebrate) || hang-head-in-shame
 # Semi-colons don't care, they just separate commands
 $ do-something; celebrate; hang-head-in-shame
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -297,14 +298,11 @@ fi
 
 echo "Cats don't woof, you silly goose!"</code><code class="hljs lang-sh fragment" data-fragment-index="1" style="position: static; margin-top: -1em; padding-top: 0;">exit 1</code></pre>
 
-
-<pre class="fragment-replace fragment" data-fragment-index="0"><code class="fragment fade-out" data-fragment-index="1">$ ./what-does-the-cat-say; echo $?
+<pre class="fragment-replace fragment" data-fragment-index="0"><code class="fragment fade-out hljs lang-cli" data-fragment-index="1">$ ./what-does-the-cat-say; echo $?
 Cats don't woof, you silly goose!
-0</code><code class="fragment" data-fragment-index="1">$ ./what-does-the-cat-say; echo $?
+0</code><code class="fragment hljs lang-cli" data-fragment-index="1">$ ./what-does-the-cat-say; echo $?
 Cats don't woof, you silly goose!
-1</code>
-```
-<!-- .element: class="fragment" -->
+1</code></pre>
 
 Note:
 
@@ -318,7 +316,7 @@ When you're exiting—especially for an error condition—make sure you're calli
 
 ### Arguments + Options
 
-```sh [1-3|5-7|5-8|9–11]
+```cli [1-3|5-8|10–12]
 # Arguments
 $ cd /var/www
 $ grep "Some text" file.txt
@@ -329,9 +327,10 @@ $ ls -a -l
 $ ls -al
 
 # Long options
-$
+$ composer outdated --format=json
 $ git push --force-with-lease
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -369,16 +368,17 @@ Notice that most of these options have both short and long versions!
 
 Set and read variables in the current environment
 
-```sh [1-2|4-5|7-8]
+```cli [1-2|4-5|7-8]
 # Export from shell files
 export CURRENT_CITY="Bowling Green"
 
 # Set directly in shell
-$ CURRENT_CITY=Chicago
+$ CURRENT_CITY="Chicago"
 
 # Set as you call a command
-$ CURRENT_CITY=Rosemont some-script
+$ CURRENT_CITY="Rosemont" some-script
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -410,6 +410,7 @@ putenv('SOMEVAR=some_value');
 # Delete an environment variable
 putenv('SOMEVAR=');
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -441,11 +442,16 @@ Note:
 
 ----
 
-#### `$argc` + `$argv`
+### Special CLI globals
 
-* `int $argc`: argument **count**
-* `array $argv`: argument **values**
-* Both will always have at least one value!
+<dl>
+    <dt class="fragment" data-fragment-index="0"><code><span class="typehint">int</span> $argc</code></dt>
+    <dd class="fragment" data-fragment-index="0">Argument <u>c</u>ount</dd>
+    <dt class="fragment" data-fragment-index="1"><code><span class="typehint">array</span> $argv</code></dt>
+    <dd class="fragment" data-fragment-index="1">Argument <u>v</u>alues</dd>
+</dl>
+
+Both will always have at least one value! <!-- .element: class="fragment" -->
 
 Note:
 
@@ -458,7 +464,7 @@ These will never be empty, because the script name is the first argument.
 
 ----
 
-```sh
+```cli
 $ php -r 'echo "{$argc} arg(s):\n"; var_export($argv);' \
     PHP "is great"
 ```
@@ -481,7 +487,7 @@ Can anyone guess the values of $argc and $argv?
 
 ----
 
-#### Daemons
+### Daemons
 
 A process that continually runs in the background
 
@@ -522,6 +528,7 @@ $name = $argv[1] ?? 'there';
 
 printf("Hello, %s!\n", $name);
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -531,9 +538,16 @@ We'll grab the first argument passed, but if we don't have one we'll fall back t
 
 ----
 
-<pre class="fragment-replace hljs language-sh"><code class="fragment fade-out" data-fragment-index="0">$ ./hello.php Ben
-Hello, Ben!</code><code class="fragment fade-in" data-fragment-index="0">$ ./hello.php
-Hello, there!</code></pre>
+```cli
+$ php hello.php Ben
+Hello, Ben!
+```
+
+```cli
+$ php hello.php
+Hello, there!
+```
+<!-- .element: class="fragment" -->
 
 Note:
 
@@ -547,79 +561,58 @@ No argument means it falls back to "Hello, there!"
 
 ### Accepting Options
 
-```php [8-10|12]
+```php [|8-10|11|12|14]
 #!/usr/bin/env php
-<?php
 #
 # USAGE:
 #
 #     hello.php [-g|--greeting=<greeting>] <name>
+<?php
 
-$opts = getopt('g::', [
-    'greeting::',
-]);
+$opts = getopt('g:', [
+    'greeting:',
+], $index);
 $greeting = $opts['greeting'] ?? $opts['g'] ?? 'Hello';
-
-$name = $argv[2] ?? 'there';
+$name = $argv[$index] ?? 'there';
 
 printf("%s, %s!\n", $greeting, $name);
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
 Let's take our script from earlier and let a custom greeting be passed via either `-g` or `--greeting`
 
+With `getopt()`, we're saying that "g", when present, must have a value.
+
 We'll use `getopt()`, specifying "g" as an option and "greeting" as a long option. We'll store the value in `$greeting`, falling back to "Hello"
 
 ----
 
-```none
-$ ./hello.php --greeting=Salutations Dylan
+```cli
+$ php hello.php --greeting=Salutations Dylan
 Salutations, Dylan!
 ```
-<!-- .element: class="fragment" -->
 
-```none
-$ ./hello.php -gSalutations Dylan
+```cli
+$ php hello.php -g=Salutations Dylan
 Salutations, Dylan!
 ```
 <!-- .element: class="fragment" -->
 
 Note:
 
-Running the new version, we can pass `--greeting` with an equal sign or `-g` with no equal sign
+Running the new version, we can pass `--greeting` or `-g` with an equal sign. If both are present, we'll favor `--greeting`
 
-However, the format's pretty strict...
+However, the format can be rather restrictive:
 
-----
-
-```none
-$ ./hello.php --greeting Salutations Dylan
-, Salutations
-```
-<!-- .element: class="fragment" -->
-
-```none
-$ ./hello.php Dylan --greeting=Salutations
-Hello, --greeting=Salutations!
-```
-<!-- .element: class="fragment" -->
-
-```none
-$ ./hello.php --greeting=Howdy -gSalutations Dylan
-Howdy, -gSalutations!
-```
-<!-- .element: class="fragment" -->
-
-Note:
-
-1. What if we don't include the equal sign between `--greeting` and "Salutations"? `$argv[2]` is now "Salutations" and the value of `--greeting` is empty
-2. `getopt()` only parses option at the beginning, so here "Dylan" is skipped over and `$argv[2]` is `--greeting=Salutations`
-3. If we try to pass both `--greeting` and `-g`, the latter is `$argv[2]` and "Dylan" is the third value
+* All options must come before arguments
+* Messing up the $rest_index (third arg of `getopt()`, set by reference) means that option keys can easily slip in as values
+* No validation, so you have to handle that yourself
 
 ----
 
-### `getopt()` kinda sucks
+### We can do better than `getopt()`!
 
 !["Exit 12 offramp" meme, with a car labeled "PHP Developers" swerving hard away from "using getopt()" onto the "literally anything else" offramp](resources/exit-12.jpg)
 
@@ -633,9 +626,15 @@ In a minute, we'll take a look at some libraries and frameworks we can use to ma
 
 ### Performing system operations
 
-* PHP has built-in functions for things like [`chmod()`](https://www.php.net/manual/en/function.chmod.php), [`mkdir()`](https://www.php.net/manual/en/function.mkdir.php), etc.
-    * Even more with [Flysystem](https://flysystem.thephpleague.com)
-* Can also execute arbitrary system commands!
+<ul>
+    <li class="fragment">
+        PHP has built-in functions for things like <a href="https://www.php.net/manual/en/function.chmod.php"><code>chmod()</code></a>, <a href="https://www.php.net/manual/en/function.mkdir.php"><code>mkdir()</code></a>, etc.
+        <ul>
+            <li>Even more with <a href="https://flysystem.thephpleague.com">Flysystem</a></li>
+        </ul>
+    </li>
+    <li class="fragment">Can also execute arbitrary system commands!</li>
+</ul>
 
 Note:
 
@@ -651,7 +650,7 @@ Remember that PHP has built-in functions for a lot of these operations, and you 
     <dt class="fragment" data-fragment-index="0"><a href="https://www.php.net/manual/en/function.exec.php"><code>exec()</code></a><dt>
     <dd class="fragment" data-fragment-index="0">Execute, return the <u>last line</u> of output</dd>
     <dd class="fragment" data-fragment-index="0">Can capture full output as array, exit code</dd>
-    <dt class="fragment" data-fragment-index="1"><a href="https://www.php.net/manual/en/function.shell-exec.php"><code>shell_exec()</code></a> (alias: <code>`cmd`</code>)</dt>
+    <dt class="fragment" data-fragment-index="1"><a href="https://www.php.net/manual/en/function.shell-exec.php"><code>shell_exec()</code></a></dt>
     <dd class="fragment" data-fragment-index="1">Execute, return the <u>full output</u> as string</dd>
 </dl>
 
@@ -695,7 +694,7 @@ Note:
 
 ----
 
-<!-- .slide: data-background-image="resources/spidey-sense.jpg" data-background-position="left bottom" data-background-size="contain" -->
+<!-- .slide: data-background-image="resources/spidey-sense.png" data-background-position="left bottom" data-background-size="contain" data-hide-footer -->
 
 Note:
 
@@ -707,9 +706,12 @@ Let's talk about how we can properly escape commands and arguments.
 
 ### Escaping commands & arguments
 
-`escapeshellcmd()` <!-- .element: class="fragment"-->
-
-`escapeshellarg()` <!-- .element: class="fragment"-->
+<dl>
+    <dt class="fragment" data-fragment-index="0"><a href="https://php.net/manual/en/function.escapeshellcmd.php"><code>escapeshellcmd()</code></a></dt>
+    <dd class="fragment" data-fragment-index="0">Escape an entire command</dd>
+    <dt class="fragment" data-fragment-index="1"><a href="https://php.net/manual/en/function.escapeshellarg.php"><code>escapeshellarg()</code></a></dt>
+    <dd class="fragment" data-fragment-index="1">Escape an individual argument</dd>
+</dl>
 
 Note:
 
@@ -729,7 +731,7 @@ $name = 'Larry && rm -rf /';
 exec('greet-user ' . $name);
 ```
 
-```sh
+```text
 # You're about to have a very bad day...
 Hello, Larry!
 ```
@@ -752,7 +754,7 @@ $name = 'Larry && rm -rf /';
 exec('greet-user ' . escapeshellarg($name));
 ```
 
-```sh
+```text
 # Weird name, but no harm done
 Hello, Larry && rm -rf /!
 ```
@@ -817,7 +819,7 @@ Each Symfony Console command is its own class, which extends `Symfony\Component\
 
 #### The execute() method
 
-```php
+```php [1-7,11|8|10]
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -843,21 +845,20 @@ It receives an implementation of the `InputInterface` (for reading from STDIN) a
 #### Configuring the command
 
 ```php
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
-
 protected function configure(): void
 {
     $this->setDescription('Creates a new user.')
-        ->setHelp('Allows you to create a user...')
-        ->addArgument('email', InputArgument::REQUIRED, 'The user email address.')
-        ->addOption('admin', null, InputOption::VALUE_NONE, 'Make this user an admin?', false);
+        ->setHelp(/* Full help text goes here... */)
+        ->addArgument(/* ... */)
+        ->addOption(/* ... */);
 }
 ```
 
 Note:
 
 The configure() method lets us set things like the description, help text, and define any arguments and/or options our command might take.
+
+Inputs can be specified as required or optional, be configured to support multiple values, and even given defaults.
 
 ----
 
@@ -907,7 +908,7 @@ This is essentially what the main Composer and Artisan files look like: they def
 
 #### Calling our command
 
-```sh [1|3-4|6-7]
+```cli [1|3-4|6-7]
 $ php console.php app:create-user beth@example.com --admin
 
 # If we've made console.php executable
@@ -916,6 +917,7 @@ $ console.php app:create-user andy@example.com
 # Produce the help documentation
 $ console.php app:create-user --help
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -946,7 +948,7 @@ Note:
 
 #### PHP-CLI Tools
 
-```php
+```php [|6-9|10-12]
 #!/usr/bin/env php
 <?php
 
@@ -960,6 +962,7 @@ for ($i = 1; $i <= $limit; $i++) {
 	cli\line($i . $suffix);
 }
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -973,8 +976,7 @@ Then we run a simple for-loop until we reach the limit the user provided.
 
 ####  PHP-CLI Tools
 
-
-<pre><code>$ php examples/PHPCliToolsExample.php</code>
+<pre class="hljs lang-cli"><code>$ php Counter.php</code>
 <code class="fragment">How high should I count? [10]: 5</code>
 <code class="fragment">Shall I shout it? [y/N]y</code>
 <code class="fragment">1!
@@ -982,7 +984,6 @@ Then we run a simple for-loop until we reach the limit the user provided.
 3!
 4!
 5!</code></pre>
-
 
 ----
 
@@ -1013,8 +1014,8 @@ As we wrap up, I'd like to share a few pieces of advice as you enter the world o
 
 ### Check Your Assumptions
 
-* Check that commands exist before using them
-* Don't hard-code system paths
+* <!-- .element: class="fragment" --> Check that commands exist before using them
+* <!-- .element: class="fragment" --> Don't hard-code system paths
 
 Note:
 
@@ -1038,18 +1039,21 @@ Some scripts give little to no feedback, while others just barf all over the con
 
 ----
 
-<pre><code class="hljs language-shell hide-line-numbers" data-highlighted="yes" data-line-numbers="1-3|5-6|8-12" data-noescape><span class="hljs-comment"># Default behavior</span>
+```cli [1-3|5-6|8-12]
+# Default behavior
 $ some-command
-<span class="hljs-string">Command completed successfully!</span>
+Command completed successfully!
 
-<span class="hljs-comment"># Only produce output if something went wrong</span>
+# Only produce output if something went wrong
 $ some-command --quiet
 
-<span class="hljs-comment"># Be more verbose</span>
+# Be more verbose
 $ some-command --verbose
-<span class="hljs-section">Re-indexing database...OK</span>
-<span class="hljs-section">Reticulating splines...OK</span>
-<span class="hljs-string">Command completed successfully!</span></code></pre>
+Reindexing database...OK
+Reticulating splines...OK
+Command completed successfully!
+```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
@@ -1084,26 +1088,11 @@ Remember composability: build small, single-purpose commands and then compose so
 
 ---
 
-* Concepts
-    - Composability
-    - STDIN, STDOUT, and STDERR
-    - Exit Codes
-    - Environment variables
-    - The CLI SAPI
-        - argc, argv
-        - getopt()
-    - Daemons
-* Writing CLI Commands
-    - Symfony Console
-    - PHP CLI Tools
-    - CLImate
-    - Calling system commands
-        - Escaping commands, arguments
-* Examples
-    - Symfony console
-    - Artisan
-    - WP-CLI
-* Best Practices
-    - Don't assume anything about the target environment
-    - Verbosity
-    - Garbage collection
+<!-- .slide: data-hide-footer -->
+
+## Thank You!
+
+Steve Grunwell<br>
+<span style="font-size: .75em;">Staff Software Engineer, Mailchimp</span>
+
+[stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)<!-- .element: class="slides-link" -->
