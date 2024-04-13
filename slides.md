@@ -667,30 +667,18 @@ The most common ways you'll see PHP call other scripts
 
 <dl>
     <dt><a href="https://www.php.net/manual/en/function.system.php"><code>system()</code></a></dt>
-    <dd></dd>
+    <dd>Returns last line of output, flushes buffer as it goes</dd>
     <dt><a href="https://www.php.net/manual/en/function.passthru.php"><code>passthru()</code></a></dt>
-    <dd>Returns raw output</dd>
     <dd>Best choice for binary files</dd>
 </dl>
 
 Note:
 
 * `system()`
+    * Works the same as its C equivalent
+    * Will attempt to flush the output buffer as it goes, but only returns the last line (and can set exit code to a variable by reference)
 * `passthru()` doesn't attempt to transform the output, so this is really useful when working within binary files like images, video, etc.
     * Link in slides' README explaining how I used it to generate animated thumbnails for gifs
-
-----
-
-### Calling other scripts
-
-<dl>
-    <dt><a href="https://www.php.net/manual/en/function.proc-open.php"><code>proc_open()</code></a></dt>
-    <dd></dd>
-    <dt><a href="https://www.php.net/manual/en/function.pcntl-exec.php"><code>pcntl_exec()</code></a></dt>
-    <dd></dd>
-</dl>
-
-Note:
 
 ----
 
@@ -1073,6 +1061,23 @@ Note:
 * PHP normally handles this automatically @ end of request
 * Help the garbage collector by explicitly unsetting variables
 * Cache in variables when appropriate, but be aware the size can balloon
+
+----
+
+### Don't let scripts be run from a browser!
+
+If your commands live within the web root, prevent them from being run outside the CLI:
+
+```php
+// Prevent this script from being run outside of a CLI context
+if (PHP_SAPI !== 'cli') {
+    exit;
+}
+```
+
+Note:
+
+Modern frameworks keep most app code out of the web root, but if you're writing commands that will live under the web root **be sure that they can't be executed by a web request!**
 
 ----
 
