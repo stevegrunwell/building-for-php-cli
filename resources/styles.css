@@ -227,7 +227,7 @@ code .typehint {
 .count-von-count:after {
     content: '';
     position: fixed;
-    top: 50vh;
+    top: 40vh;
     display: block;
     width: 100%;
     height: 100vh;
