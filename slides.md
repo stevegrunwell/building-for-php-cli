@@ -987,6 +987,7 @@ An example program using PHP-CLI tools:
 
 ----
 
+<!-- .element: class="count-von-count" -->
 ####  PHP-CLI Tools
 
 ```cli [1|2|3|4-9]
