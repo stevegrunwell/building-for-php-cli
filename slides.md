@@ -1,9 +1,12 @@
 <!-- .slide: class="title-slide" data-hide-footer -->
-# Building for the PHP Command Line Interface
+# Building for the PHP \\<br>Command Line Interface
 
 Steve Grunwell <!-- .element: class="byline" -->
+<span class="role">Staff Software Engineer, Mailchimp</span>
+
 [@stevegrunwell@phpc.social](https://phpc.social/@stevegrunwell)
 [stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)
+<!-- .element: class="slides-link" -->
 
 ---
 
@@ -15,33 +18,20 @@ Before we talk about how, let's discuss *why* you might use PHP on the command l
 
 ----
 
-### Benefits of the CLI
-
-* <!-- .element: class="fragment" --> Interact with your apps, no GUI required
-* <!-- .element: class="fragment" --> Great for setup/maintenance scripts
-* <!-- .element: class="fragment" --> Cron jobs & queues
-
-Note:
-
-There are a number of different reasons we might want to interact with our apps from the CLI.
-
-1. No GUI required, super helpful for services, utilities (Composer, PHP_CodeSniffer, PHPUnit, PHPStan, etc.)
-2. Useful for setup, maintenance, seeding, etc.
-    * Things you wouldn't normally expose a UI for
-
-
-----
-
 ### PHP Everywhere!
 
 * <!-- .element: class="fragment" --> Re-use application code
 * <!-- .element: class="fragment" --> Reduce language sprawl
+* <!-- .element: class="fragment" --> PHP ❤️ Scripting
 
 Note:
 
-* The biggest benefit of PHP on the CLI is that we're still working in PHP: no alternate implementations, duplicative services, etc.
+* The biggest benefit of PHP on the CLI is that we're still working in PHP:
+    * Speaking the same language as the rest of your application
+    * No alternate implementations, duplicative services, etc.
 * Keeps codebase tighter and prevents every PHP dev on your team from *also* having to write Bash or Python
 * PHP is a scripting language at heart
+    * The tools we use every day (Composer, PHP_CodeSniffer, PHPUnit, PHPStan, et al) are written in PHP and interacted with solely through the command line (no GUI required!)
 
 ----
 
@@ -71,10 +61,11 @@ Note:
 
 Two ways of running PHP scripts on the command line:
 
-1. Explicitly passing the script as an argument to the `php` binrary
+1. Explicitly passing the script as an argument to the `php` binary
 2. Using the PHP shebang
     * Probably familiar if you've done shell scripting before
     * Tells the shell how to interpret the script (literally "php from the user's $PATH")
+    * Only required if you want to be able to run it without explicitly calling the PHP binary
 
 As long as the script has an executable bit in its permissions, we can run it like any other command
 
@@ -91,25 +82,35 @@ As long as the script has an executable bit in its permissions, we can run it li
 
 Note:
 
-Other code changes like schema updates, table seeding, etc.
+Great places for PHP command line scripts include:
 
-YOLO scripts = scripts you're only going to run once (or a small number) of times.
+* Data migrations, transformations, schema updates, table seeding, etc.
+* Maintenance scripts and scheduled jobs
+    * Cron jobs, queues
+* Operations that are not meant to be customer facing
+    * Scaffolding new models
+    * Generating new migrations
+* YOLO scripts: scripts you're only going to run once (or a small number) of times.
 
 ---
 
 ## <span class="no-transform">CLIs</span> for your Favorite Frameworks
+
+Note:
+
+If you're working with a framework or CMS, chances are you already have the ability to talk to it via the CLI
 
 ----
 
 ### [Drush](https://www.drush.org)
 
 * <!-- .element: class="fragment" --> "Drupal Shell"
-* <!-- .element: class="fragment" --> One of the OG CLI tools for PHP CMSs
+    * One of the OG CLI tools for PHP CMSs
 * <!-- .element: class="fragment" --> Manage themes, modules, system updates, etc.
 
 Note:
 
-Credit where credit is due, Drush is one of the earliest CLI tools for managing a PHP application
+Credit where credit is due, Drush ("Drupal Shell") is one of the earliest CLI tools for managing a PHP application
 
 ----
 
@@ -120,39 +121,41 @@ Credit where credit is due, Drush is one of the earliest CLI tools for managing 
 * <!-- .element: class="fragment" --> Inspect and maintain cron, caches, and transients
 * <!-- .element: class="fragment" --> Extensible for themes + plugins
 
-
 Note:
 
-Heavily inspired by Drush, WP-CLI lets you perform most operations on a WordPress site without touching the GUI
+Heavily inspired by Drush, WP-CLI lets you perform most operations on a WordPress site without touching the GUI:
 
-Before my current job, I spent five years working at a WordPress-oriented web host. We used WP-CLI for *everything*
+Before my current job, I spent five years working at a WordPress-oriented web host. We used WP-CLI for *everything*, including as part of our provisioning scripts
 
 ----
 
 ### [Laravel Artisan](https://laravel.com/docs/master/artisan)
 
 * <!-- .element: class="fragment" --> The underlying CLI for Laravel
+    * Built atop the Symfony Console
 * <!-- .element: class="fragment" --> Scaffold <img src="resources/all-the-things.png" alt="all the things" style="max-height: 1.4em; margin: -.2em 0;" />
-* <!-- .element: class="fragment" --> Built atop the Symfony Console
-* <!-- .element: class="fragment" --> Third-party access
+* <!-- .element: class="fragment" --> Allows packages to register new commands
 
 Note:
 
+* Artisan is the command line interface for Laravel
+    * Built on top of Symfony Console (more in a minute)
 * Easily scaffold models, controllers, console commands, and more!
 * Third-party packages can register new commands
-    - Easy to build toolkits for Laravel devs
 
 ----
 
 ### Joomlatools Console
 
 * <!-- .element: class="fragment" --> CLI framework for Joomla
-* <!-- .element: class="fragment" --> Manage sites, extensions, databases, & virtual hosts
-* <!-- .element: class="fragment" --> List, purge, and clear cache contents
+* <!-- .element: class="fragment" --> Manage sites, extensions, databases, etc.
+    * Includes virtual host management
 
 Note:
 
-* Kind of neat: has the "vhost" command for managing Apache + nginx virtual hosts
+* Joomla counterpart of WP-CLI or Drush
+* Similar kinds of features: managing sites, users, extensions, etc.
+    * Kind of neat: has the "vhost" command for managing Apache + nginx virtual hosts
 
 ---
 
@@ -182,6 +185,10 @@ Who can tell me what this means?
 
 <cite>Eric S. Raymond, [*The Art of Unix Programming*](https://en.wikipedia.org/wiki/The_Art_of_Unix_Programming)</cite>
 
+Note:
+
+Small programs that can communicate with each other through common interfaces (data streams) and be combined to do most anything
+
 ----
 
 ### Data Streams
@@ -210,7 +217,7 @@ Streams can be redirected (e.g. write errors to a log file, send the output of o
 
 ```cli [|2-3|4|5|6|7]
 # Get the number of unique IP addresses in access.log
-$ sudo grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}" \
+$ grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}" \
     /var/log/nginx/access.log \
     | uniq \
     | wc -l \
@@ -227,9 +234,11 @@ Counting the number of IP addresses in access.log:
     * STDOUT would be a series of IP addresses, one per line
 2. Pipe that list of addresses into `uniq` to remove duplicates
     * STDOUT from grep became STDIN to uniq
-3. Pipe the filtered list into `wc` (word count) with the `-l` flag (count the number of lines)
+3. Pipe the filtered list into `wc` (word count) with the `-l` option (count the number of lines)
     * STDOUT becomes an integer representing the number of lines
 4. Use `xargs` to append that number to printf to give a summary
+
+Five commands (grep, uniq, wc, xargs, and printf), each playing their part
 
 ----
 
@@ -249,10 +258,11 @@ Note:
 When a command exits, we do so with an exit code.
 
 * 0 means that no errors occurred
-* 1 is generally a catch-all for errors
-* 2 is typically meant to indicate incorrect command/arg usage
-* 3–255 may have special meaning; there are a few conventions in the 120s for permissions errors
-    * You might use 3 for validation issues, 4 for network connectivity issues, etc.
+* 1–255 represent some sort of error
+    * 1 is generally a catch-all for errors
+    * 2 is typically meant to indicate incorrect command/arg usage
+    * 3–255 may have special meaning; there are a few conventions in the 120s for permissions errors
+* You might use 3 for filesystem issues, 4 for network connectivity issues, etc.
 
 Most scripts you come across will generally use 0 or 1: did it succeed or fail (respectively)?
 
@@ -282,41 +292,13 @@ We can chain operations based on the exit code of the previous command:
 * Double-ampersand ("and") will proceed if the previous operation had an exit code of zero
 * Double pipes ("or") will proceed if we encountered a non-zero exit code
 * Both can be used, but use parentheses if you want the "or" to be tied to the "and" sequence
-
-----
-
-### A final note on Exit Codes
-
-The last exit code provided will be used
-
-<pre class="hljs"><code class="hljs lang-sh">#!/usr/bin/env bash
-
-if grep -i woof cat-sounds.txt; then
-    echo 'Congrats, your cat goes "woof"!'
-    exit 0
-fi
-
-echo "Cats don't woof, you silly goose!"</code><code class="hljs lang-sh fragment" data-fragment-index="1" style="position: static; margin-top: -1em; padding-top: 0;">exit 1</code></pre>
-
-<pre class="fragment-replace fragment" data-fragment-index="0"><code class="fragment fade-out hljs lang-cli" data-fragment-index="1">$ ./what-does-the-cat-say; echo $?
-Cats don't woof, you silly goose!
-0</code><code class="fragment hljs lang-cli" data-fragment-index="1">$ ./what-does-the-cat-say; echo $?
-Cats don't woof, you silly goose!
-1</code></pre>
-
-Note:
-
-If you don't specify an exit code, the last one that occurred will be used.
-
-This can cause issues if you use things like "echo" (which will almost certainly exit with 0) for error messages but don't explicitly exit.
-
-When you're exiting—especially for an error condition—make sure you're calling exit with an appropriate exit code!
+* Semi-colons can chain multiple commands with no attention paid to exit codes
 
 ----
 
 ### Arguments + Options
 
-```cli [1-3|5-8|10–12]
+```cli [1-3|5-8|10-12]
 # Arguments
 $ cd /var/www
 $ grep "Some text" file.txt
@@ -335,8 +317,10 @@ $ git push --force-with-lease
 Note:
 
 * Arguments: positional parameters, passed in order
-* Options: Can contain values, single dash + single letter. Can usually be combined
-* Long options: Can contain values, two dashes + multiple letters
+* Options: Can optionally have values, single dash + single letter. Can usually be combined
+    * e.g. `ls -a -l` is the same as `ls -al`
+* Long options: Same as regular options, but with two dashes + multiple letters
+    * Often easier to read or decode at a glance
 
 ----
 
@@ -368,7 +352,7 @@ Notice that most of these options have both short and long versions!
 
 Set and read variables in the current environment
 
-```cli [1-2|4-5|7-8]
+```cli [1-2|4-5|7-8|]
 # Export from shell files
 export CURRENT_CITY="Bowling Green"
 
@@ -428,9 +412,9 @@ There's also the `$_ENV` superglobal, but writing to this array has no impact on
 Additional **S**erver **API** for PHP
 
 ```php
-// Don't run unless we're on the CLI.
-if (php_sapi_name() !== 'cli') {
-    exit;
+// Check the current SAPI. We can also use PHP_SAPI here.
+if (php_sapi_name() === 'cli') {
+    // We're on the command line!!
 }
 ```
 
@@ -438,7 +422,7 @@ Note:
 
 * PHP has a number of server APIs that can introduce alternate functionality; cli is one of them
 * Other SAPIs include apache, cgi-fcgi, fpm-fcgi, litespeed, phpdbg, etc.
-* We can determine what SAPI we're using with the `php_sapi_name()` function or `PHP_SAPI` constant. For console commands, we should prevent anything from running
+* We can determine what SAPI we're using with the `php_sapi_name()` function or `PHP_SAPI` constant.
 
 ----
 
@@ -455,14 +439,16 @@ Both will always have at least one value! <!-- .element: class="fragment" -->
 
 Note:
 
-The CLI SAPI exposes two CLI-specific global variables: $argc and $argv.
+The CLI SAPI exposes two CLI-specific global variables: argc and argv.
 
 * $argc tells us the number of arguments passed to the script
 * $argv is an array of those values
 
-These will never be empty, because the script name is the first argument.
+These will never be empty, because the script name is the first argument (even if just "Standard input code")
 
 ----
+
+#### What will we see?
 
 ```cli
 $ php -r 'echo "{$argc} arg(s):\n"; var_export($argv);' \
@@ -481,9 +467,9 @@ array (
 
 Note:
 
-To demonstrate $argc and $argv, let's pass a simple script to the CLI PHP interpreter:
+To demonstrate argc and argv, let's pass a simple script to the CLI PHP interpreter:
 
-Can anyone guess the values of $argc and $argv?
+Can anyone guess the values of argc and argv?
 
 ----
 
@@ -505,22 +491,26 @@ while (true) {
 Note:
 
 * Not the best use of PHP, but useful for things like workers
-* Talk that really got me into PHP CLI: Building PHP Daemons and Long Running Processes by Tim Lytle
-    - php[tek] 2015
+* Talk that really got me into PHP CLI: "Building PHP Daemons and Long Running Processes" by Tim Lytle
+    * php[tek] 2015
 
 ---
 
 ## Writing CLI Commands
 
+[github.com/stevegrunwell/php-cli-examples](https://github.com/stevegrunwell/php-cli-examples)
+
 Note:
 
 Now that we have a foundation, let's get into writing our own commands!
+
+Sample repo available with these examples and more!
 
 ----
 
 ### A simple greeter
 
-```php [|1|4|6]
+```php [|4|6]
 #!/usr/bin/env php
 <?php
 
@@ -532,9 +522,10 @@ printf("Hello, %s!\n", $name);
 
 Note:
 
-Let's start with a bare-bones greeter script.
+Let's start with a bare-bones greeter script:
 
-We'll grab the first argument passed, but if we don't have one we'll fall back to "there".
+* First we'll grab the first argument and, if not present, fall back to "there"
+* Then `printf()` "hello, $name"
 
 ----
 
@@ -581,21 +572,27 @@ printf("%s, %s!\n", $greeting, $name);
 
 Note:
 
-Let's take our script from earlier and let a custom greeting be passed via either `-g` or `--greeting`
+Let's take our script from earlier and let a custom greeting be passed via either `-g` or `--greeting`.
 
-With `getopt()`, we're saying that "g", when present, must have a value.
-
-We'll use `getopt()`, specifying "g" as an option and "greeting" as a long option. We'll store the value in `$greeting`, falling back to "Hello"
+* The `getopt()` function parses the given options out of `$argv`
+    * `g:` means `-g` with a value
+    * `greeting` means `--greeting`, also with a value
+    * The third argument is a variable that will be set by reference and tell you where `getopt()` stopped parsing options
+* Since we're accepting `--greeting` and `-g`, one should take precedence if both are present
+    * In this case, our greeting will be `--greeting` if present, otherwise `-g`. If no greeting is passed, default to "hello"
+* The arguments come after any options, so we'll take advantage of `$index` to determine where the actual name is passed
+    * If we can't find one, default to "there"
+* Finally, print the greeting along with the name:
 
 ----
 
 ```cli
-$ php hello.php --greeting=Salutations Dylan
+$ php hello.php --greeting="Salutations" Dylan
 Salutations, Dylan!
 ```
 
 ```cli
-$ php hello.php -g=Salutations Dylan
+$ php hello.php -g="Salutations" Dylan
 Salutations, Dylan!
 ```
 <!-- .element: class="fragment" -->
@@ -640,7 +637,9 @@ Note:
 
 When writing CLI scripts, it's not uncommon to need to do something on the filesystem.
 
-Remember that PHP has built-in functions for a lot of these operations, and you can get even more by leveraging a package like Flysystem
+* PHP has built-in functions for things like `chmod()`, `mkdir()`, and other common Unix operations
+    * If you're using Flysystem, there are even more options for filesystem manipulation
+* PHP can also execute arbitrary system commands:
 
 ----
 
@@ -658,25 +657,29 @@ Note:
 
 The most common ways you'll see PHP call other scripts
 
-* `exec()` is a bit more flexible, as we can populate the full output and exit code by reference
-* `shell_exec()` will return the full output as a string, and is the same as wrapping the command in backticks
+* `exec()` lets us execute a command and capture both the exit code and each line of output into an array
+* `shell_exec()` will return the full output as a string
+    * No exit code, but perhaps the easiest way to call another script
+    * The same as wrapping the command in backticks
 
 ----
 
 ### Calling other scripts
 
 <dl>
-    <dt><a href="https://www.php.net/manual/en/function.system.php"><code>system()</code></a></dt>
-    <dd>Returns last line of output, flushes buffer as it goes</dd>
-    <dt><a href="https://www.php.net/manual/en/function.passthru.php"><code>passthru()</code></a></dt>
-    <dd>Best choice for binary files</dd>
+    <dt class="fragment" data-fragment-index="0"><a href="https://www.php.net/manual/en/function.system.php"><code>system()</code></a></dt>
+    <dd class="fragment" data-fragment-index="0">Returns last line of output</dd>
+    <dd class="fragment" data-fragment-index="0">Flushes buffer as it goes</dd>
+    <dt class="fragment" data-fragment-index="1"><a href="https://www.php.net/manual/en/function.passthru.php"><code>passthru()</code></a></dt>
+    <dd class="fragment" data-fragment-index="1">Best choice for binary files</dd>
 </dl>
 
 Note:
 
 * `system()`
     * Works the same as its C equivalent
-    * Will attempt to flush the output buffer as it goes, but only returns the last line (and can set exit code to a variable by reference)
+    * Will attempt to flush the output buffer as it goes, but only returns the last line
+        * Can also capture the exit code to a variable by reference
 * `passthru()` doesn't attempt to transform the output, so this is really useful when working within binary files like images, video, etc.
     * Link in slides' README explaining how I used it to generate animated thumbnails for gifs
 
@@ -686,9 +689,9 @@ Note:
 
 Note:
 
-If the thought of executing arbitrary system commands sets off your security sense, you're 100% correct.
+If the thought of executing arbitrary system commands sets off your security sense: congratulations, your instincts are dead-on!
 
-Let's talk about how we can properly escape commands and arguments.
+If we're going to call other system commands, we need to make sure that we're properly escaping everything, _especially_ if there's any user-provided input!
 
 ----
 
@@ -703,7 +706,7 @@ Let's talk about how we can properly escape commands and arguments.
 
 Note:
 
-There are two major functions you should be aware with:
+There are two major functions you should be aware of:
 
 1. `escapeshellcmd()` escapes any meta-characters that could be used to chain other commands
 2. `escapeshellarg()` escapes individual arguments and options and should *always* be used with user data
@@ -727,9 +730,9 @@ Hello, Larry!
 
 Note:
 
-Imagine we have a greet-user script, which accepts a name and spits out "Hello, $name!"
+For example, imagine we have a greet-user script, which accepts a name (maybe from a database or user input) and spits out "Hello, $name!"
 
-Now, let's say the `$name` variable is coming from an untrusted source, like $_POST data: simply passing it means that a well-crafted name could execute arbitrary commands on our system 😬
+If the `$name` is coming from an untrusted source (like $_POST data), we could easily inject and execute arbitrary commands on our system! 😬
 
 ----
 
@@ -750,7 +753,9 @@ Hello, Larry && rm -rf /!
 
 Note:
 
-In this version, the `$name` is properly-escaped so that it can't tack on another command.
+Same as before, but wrapping `$name` in `escapeshellarg()`
+
+The ampersands are escaped, so this just looks like a really weird name (but doesn't hose our system)
 
 ---
 
@@ -758,7 +763,7 @@ In this version, the `$name` is properly-escaped so that it can't tack on anothe
 
 Note:
 
-With many of those fundamentals out of the way, we can start looking at some of the available libraries and frameworks to make writing PHP for the CLI way nicer
+With the fundamentals out of the way, we can start looking at some of the available libraries and frameworks to make writing PHP for the CLI way nicer
 
 ----
 
@@ -766,22 +771,26 @@ With many of those fundamentals out of the way, we can start looking at some of 
 
 * <!-- .element: class="fragment" --> CLI framework of choice
 * <!-- .element: class="fragment" --> Handlers for input & output
+* <!-- .element: class="fragment" --> Built-in help screen, validation
 * <!-- .element: class="fragment" --> Born to be tested
 
 Note:
 
-* Component from the Symfony framework
+Component from the Symfony framework
+
 * De facto tool for writing PHP CLI scripts
-    - Powers Artisan, Composer, Behat, and more
+    * Powers Artisan, Composer, Behat, and more
 * Ships with methods for all sorts of input and output handling
+* Commands allow you to register accepted arguments and options, including validation
+    * Will then generate a help screen automatically
 * Designed from the ground-up to be easily tested
-* Easily integrates with other Symfony components
+    * Also integrates well with other Symfony components
 
 ----
 
 #### Building a Symfony Console Command
 
-```php [|1|3-4|6|7-9]
+```php [|1|3,6|4,7-9]
 namespace App\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -799,34 +808,9 @@ Note:
 Each Symfony Console command is its own class, which extends `Symfony\Component\Console\Command\Command`
 
 1. First, define our namespace (we'll just use `App\Command`)
-2. Pull in the AsCommand attribute and the base Command class from Symfony Console
-3. Set the command name (app:create-user)
+2. Set the command name (app:create-user) using the AsCommand attribute
+    * Newer feature, can also be set in `configure()` method
 4. Construct the class, extending that base Command
-
-----
-
-#### The execute() method
-
-```php [1-7,11|8|10]
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-
-protected function execute(
-    InputInterface $input,
-    OutputInterface $output
-): int {
-    // Do something in here!
-
-    return Command::SUCCESS;
-}
-```
-<!-- .element: class="hide-line-numbers" -->
-
-Note:
-
-The main entry point for your command is the `execute()` method.
-
-It receives an implementation of the `InputInterface` (for reading from STDIN) and `OutputInterface` (for writing to STDOUT and STDERR), and will return an exit code (`Command::SUCCESS` is 0, `Command::ERROR` is 1, `Command::INVALID` is 2)
 
 ----
 
@@ -844,15 +828,43 @@ protected function configure(): void
 
 Note:
 
-The configure() method lets us set things like the description, help text, and define any arguments and/or options our command might take.
+* The `configure()` method lets us set things like the description, help text, and define any arguments and/or options our command might take.
+    * Inputs can be specified as required or optional, be configured to support multiple values, and even given defaults.
+    * If we didn't use the `AsCommand` attribute, we could set the command name here
 
-Inputs can be specified as required or optional, be configured to support multiple values, and even given defaults.
+----
+
+#### The execute() method
+
+```php [1-7,11|10]
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+protected function execute(
+    InputInterface $input,
+    OutputInterface $output
+): int {
+    // Do something in here!
+
+    return Command::SUCCESS;
+}
+```
+<!-- .element: class="hide-line-numbers" -->
+
+Note:
+
+* The main entry point for your command is the `execute()` method.
+* Receives implementations of the `InputInterface` and `OutputInterface` interfaces
+    * Input lets us retrieve arguments and options
+    * Output lets is write to the console, and includes ways to color output, format in different ways, and more
+* Method returns an exit code
+    * Three exit code constants available on Command class: `Command::SUCCESS` (0), `Command::ERROR` (1), `Command::INVALID` (2)
 
 ----
 
 #### Arguments + options
 
-```php
+```php [1|3-5|7]
 $user = new User($input->getArgument('email'));
 
 if ($input->getOption('admin')) {
@@ -861,16 +873,23 @@ if ($input->getOption('admin')) {
 
 $user->save();
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
-Using the argument and option we defined in `configure()`, we can now access those values via `getArgument()` and `getOption()` on our `InputInterface` instance
+Within `execute()`, we can create our new user.
+
+* Let's say our `User` model accepts an email address in its constructor:
+    * We can retrieve this via `$input->getArgument('email')` because we registered it in `configure()`
+    * If this argument has been marked required, Symfony will have already thrown an error before getting to this point
+* If the `--admin` option is present, we might call `$user->makeAdmin()`
+* Finally, call `$user->save()` to persist our model to the database
 
 ----
 
 #### Bootstrap our command(s)
 
-```php
+```php [|7-9|6,10|11]
 #!/usr/bin/env php
 <?php
 
@@ -883,14 +902,19 @@ $app = new Application();
 $app->add(CreateUserCommand());
 $app->run();
 ```
+<!-- .element: class="hide-line-numbers" -->
 
 Note:
 
 A Symfony command by itself doesn't do much, it needs to be registered within a Symfony console application.
 
-You can think of this like a video game console: the app is our Nintendo/Xbox/Playstation, while each command is a game in our library.
+Think of this like a video game console: the app is our Nintendo/Xbox/Playstation, while each command is a game in our library.
 
-This is essentially what the main Composer and Artisan files look like: they define the console application and determine where commands are read from.
+This is essentially what the main Composer and Artisan files look like:
+
+* Create a new application
+* Register our `CreateUserCommand`
+* Call `run()`
 
 ----
 
@@ -903,7 +927,7 @@ $ php console.php app:create-user beth@example.com --admin
 $ console.php app:create-user andy@example.com
 
 # Produce the help documentation
-$ console.php app:create-user --help
+$ php console.php app:create-user --help
 ```
 <!-- .element: class="hide-line-numbers" -->
 
@@ -919,24 +943,24 @@ Assuming we've named our bootstrap file "console.php", we can now call our new c
 
 ### [PHP-CLI Tools](https://github.com/wp-cli/php-cli-tools)
 
-* <!-- .element: class="fragment" --> Simplify input + output
-    - <!-- .element: class="fragment" --> Tabular + tree displays
-    - <!-- .element: class="fragment" --> Progress indicators
 * <!-- .element: class="fragment" --> Maintained by the WP-CLI team
+* <!-- .element: class="fragment" --> Simplify input + output
+    * Prompts, menus, and more
+    * Output formatting: tables, trees,<br>progress bars, and more!
 
 Note:
 
-* Library that simplifies input + output
-    - Prompts, menus, arguments
-    - Output formatting
-    - Tabular + tree displays
-    - Progress indicators
+* Library full of helper functions maintained by the WP-CLI team
+* Functions to handle input + output:
+    * Prompt users for data or present menus of options
+    * Formatters for coloring text, plus more advanced formats like tables or trees
+    * Includes progress indicators
 
 ----
 
 #### PHP-CLI Tools
 
-```php [|6-9|10-12]
+```php [|6|7-8|10-12]
 #!/usr/bin/env php
 <?php
 
@@ -944,7 +968,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $limit  = cli\prompt('How high should I count?', 10);
 $loud   = cli\choose('Shall I shout it');
-$suffix = 'y' === $loud ? '!' : '.';
+$suffix = $loud === 'y' ? '!' : '.';
 
 for ($i = 1; $i <= $limit; $i++) {
 	cli\line($i . $suffix);
@@ -954,43 +978,47 @@ for ($i = 1; $i <= $limit; $i++) {
 
 Note:
 
-Here's another sample program, this time using the PHP CLI Tools library maintained by the WP-CLI team.
+An example program using PHP-CLI tools:
 
-Ask how high we should count (with a default of 10) and get a yes/no prompt for volume.
-
-Then we run a simple for-loop until we reach the limit the user provided.
+* Ask how high we should count (with a default of 10)
+* Prompt "shall I shout it?", which accepts y or n (yes or no)
+    * Depending on the value, assign either an exclamation mark or period
+* Then, from 1 until we reach the value of $limit, print out the number with the given suffix
 
 ----
 
 ####  PHP-CLI Tools
 
-<pre class="hljs lang-cli"><code>$ php Counter.php</code>
-<code class="fragment">How high should I count? [10]: 5</code>
-<code class="fragment">Shall I shout it? [y/N]y</code>
-<code class="fragment">1!
+```cli [1|2|3|4-9]
+$ php Counter.php
+How high should I count? [10]: 5
+Shall I shout it? [y/N]y
+1!
 2!
 3!
 4!
-5!</code></pre>
+5!
+```
+<!-- .element: class="hide-line-numbers" -->
 
 ----
 
 ### [CLImate](https://climate.thephpleague.com/) <!-- .element: style="text-transform: none;" -->
 
-* More focused on output <!-- .element: class="fragment" -->
-    - Progress bars, borders, JSON, and more
+* <!-- .element: class="fragment" --> The League of Extraordinary Packages
+* <!-- .element: class="fragment" --> More focused on output
+    * Progress bars, borders, JSON, and more
 * <!-- .element: class="fragment" --> Includes helpers for ASCII art and animations!
 !["Oh Hello" as animated ASCII art, rising from the bottom of the screen](resources/climate-animation.gif) <!-- .element: class="seamless" -->
 
 Note:
 
 * Maintained by The League of Extraordinary Packages
-* More output options than PHP CLI Tools
-    - Includes some experimental inputs, including radio buttons and check-boxes
-
+* More output options than PHP-CLI Tools
+    * Includes some experimental inputs, including radio buttons and check-boxes
+* Favorite feature: support for animations and ASCII art
 
 ---
-
 
 ## CLI Best Practices
 
@@ -1011,6 +1039,8 @@ Everybody's machine is different, and you don't want your script to fail because
 
 If you remember from the shebang, we use `/usr/bin/env` to get the path to the PHP binary from the environment. Even on the same platform, different versions or installation methods may install to different spots.
 
+Good example: the location of where Homebrew installs things varies between Apple Silicon and Intel chips
+
 ----
 
 ### Rule of Silence
@@ -1021,9 +1051,10 @@ If you remember from the shebang, we use `/usr/bin/env` to get the path to the P
 
 Note:
 
-The amount of output will vary depending on the purpose of your script; a major platform migration might call for very detailed output, while a maintenance script may only need to print something if there was an error.
+The amount of output will vary depending on the purpose of your script: some scripts give little to no feedback, while others just barf all over the console. The trick is to get your default output level _just right_.
 
-Some scripts give little to no feedback, while others just barf all over the console. The trick is to get your default output level _just right_.
+* A major platform migration might call for very detailed output
+* A maintenance script may only need to print something if there was an error.
 
 ----
 
@@ -1057,19 +1088,27 @@ Know your audience, and only print the bare minimum by default. Use options like
 
 Note:
 
-* Garbage collector frees up memory that was previously allocated but no longer needed.
-* PHP normally handles this automatically @ end of request
+Not something we normally need to think about in PHP
+
+The garbage collector frees up memory that was previously allocated but no longer needed. This is normally handled by PHP automatically @ end of request
+
+Big difference between a 2s request and a 24hr command execution:
+
 * Help the garbage collector by explicitly unsetting variables
-* Cache in variables when appropriate, but be aware the size can balloon
+    * Done with an object? Call `unset()` to hint to the gc that this can be cleaned
+* Cache everything you can...
+* But be aware that if (for example) you're tracking the results of each record changed these arrays can get **huge**
+    * Determine a reasonable batch size and reset things once you reach that number
+    * Maybe write out details to a log file, then reset the array
 
 ----
 
-### Don't let scripts be run from a browser!
+### Ignore Web Requests
 
-If your commands live within the web root, prevent them from being run outside the CLI:
+If your commands live within the web root, prevent them from being run outside the CLI!
 
 ```php
-// Prevent this script from being run outside of a CLI context
+// Only allow this script to run on the CLI!
 if (PHP_SAPI !== 'cli') {
     exit;
 }
@@ -1078,6 +1117,8 @@ if (PHP_SAPI !== 'cli') {
 Note:
 
 Modern frameworks keep most app code out of the web root, but if you're writing commands that will live under the web root **be sure that they can't be executed by a web request!**
+
+Exit code doesn't really matter here, you just don't want it to run.
 
 ----
 
@@ -1089,15 +1130,22 @@ Note:
 
 A common mistake is trying to build a single CLI command that can do it all.
 
-Remember composability: build small, single-purpose commands and then compose sophisiticated pipelines
+Remember composability: build small, single-purpose commands and then use those to compose sophisiticated pipelines
 
 ---
 
-<!-- .slide: data-hide-footer -->
+<!-- .slide: class="thank-you" data-hide-footer -->
 
 ## Thank You!
 
-Steve Grunwell<br>
-<span style="font-size: .75em;">Staff Software Engineer, Mailchimp</span>
+Steve Grunwell <!-- .element: class="byline" -->
+<span class="role">Staff Software Engineer, Mailchimp</span>
 
-[stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)<!-- .element: class="slides-link" -->
+[@stevegrunwell@phpc.social](https://phpc.social/@stevegrunwell)
+[stevegrunwell.com/slides/php-cli](https://stevegrunwell.com/slides/php-cli)
+[github.com/stevegrunwell/php-cli-examples](https://github.com/stevegrunwell/php-cli-examples)
+<!-- .element: class="slides-link" -->
+
+Note:
+
+REMEMBER TO REPEAT THE QUESTION!!

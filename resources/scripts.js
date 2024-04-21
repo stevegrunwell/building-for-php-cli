@@ -72,7 +72,7 @@ if (typeof window.options !== undefined) {
                 {
                     scope: 'variable',
                     match: /\s-{1,2}[a-z0-9-_]+=?/,
-                }
+                },
             ],
         };
     });
