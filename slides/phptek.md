@@ -1,1 +1,0 @@
-<!-- .slide: class="intro-slide" data-state="intro-slide" data-background-image="resources/phptek18/info.jpg" data-background-position="center bottom" data-background-size="contain" data-background-color="#ffd920" -->

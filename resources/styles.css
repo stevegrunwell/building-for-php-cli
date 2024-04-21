@@ -1,0 +1,242 @@
+/**
+ * Custom styles for Reveal.js.
+ */
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700;Roboto:700;Fira+Code:400);
+
+/* Override some defaults from the base theme. */
+:root {
+    --r-heading-font: Roboto, 'Source Sans Pro', sans-serif;
+    --r-body-font: 'Roboto Slab', 'Source Sans Pro', sans-serif;
+    --r-heading1-size: 1.6em;
+    --r-heading1-text-shadow: 0;
+    --r-code-font: 'Fira Code', monospace;
+    --subdued-text-color: #555;
+}
+
+.reveal {
+    font-family: var(--r-body-font);
+    background: url('./background.webp') center center repeat;
+}
+
+/* Special styling for the title + thank you slides. */
+.title-slide h1 {
+    text-align: left;
+    font-family: var(--r-code-font);
+    font-weight: 100;
+    text-transform: lowercase;
+    word-spacing: -.25em;
+}
+
+.title-slide h1:before {
+    content: '$';
+    display: inline-block;
+    margin-right: .5em;
+    font-weight: bold;
+    color: var(--r-link-color);
+}
+
+.title-slide h1:after {
+    content: '\25AF';
+    animation: blink 2s step-start infinite;
+    font-size: calc(1em * var(--r-heading-line-height));
+    color: var(--subdued-text-color);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.title-slide h1,
+.thank-you h2 {
+    margin-bottom: 1em;
+}
+
+.byline {
+    font-weight: bold;
+}
+
+.byline .role {
+    display: block;
+    font-size: .75em;
+    font-weight: normal;
+}
+
+.reveal .slides-link {
+    display: block;
+    margin-top: 3rem;
+    font-size: .75em;
+}
+
+.slides-link a {
+    display: block;
+    font-weight: 300;
+}
+
+/* Persistent footer */
+.presentation-footer {
+    --presentation-footer-color: var(--subdued-text-color);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding: 0 5em .5em 1em;
+    font-size: .5em;
+    color: var(--presentation-footer-color);
+    transition: .2s;
+}
+
+.presentation-footer[hidden] {
+    display: none;
+}
+
+.presentation-footer a {
+    display: inline-block;
+}
+
+@media (min-width: 600px) {
+    .presentation-footer {
+        font-size: .65em;
+    }
+}
+
+/* Blockquotes and figures */
+.reveal blockquote {
+    width: 90%;
+    box-shadow: none;
+}
+
+.reveal blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: .5em;
+    left: -.3em;
+    font-family: Georgia, serif;
+    font-size: 2.25em;
+    line-height: 0;
+    color: var(--r-link-color-dark);
+}
+
+.reveal blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.reveal cite,
+.reveal figure figcaption {
+    font-size: .8em;
+    color: var(--subdued-text-color);
+}
+
+.reveal cite:before {
+    content: '—';
+}
+
+/* Add a bit of extra space between top-level list items. */
+.slides section > ol > li + li,
+.slides section > ul > li + li {
+    margin-top: .5em;
+}
+
+/* Hide text that's hidden for the sake of presentation. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+}
+
+/* Pull image captions closer to the image */
+.reveal .image-caption {
+    margin-top: calc(-1 * var(--r-block-margin));
+    font-size: .75em;
+}
+
+/* Add .hide-line-numbers to code blocks in order to hide line numbering. */
+.hide-line-numbers .hljs-ln-numbers {
+    display: none;
+}
+
+/* Link to Tim's Building PHP Daemons and Long Running Processes talk. */
+.beardhawk {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    align-items: center;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.beardhawk img {
+    max-width: 3em;
+    border-radius: 50%;
+}
+
+/* Allow definition lists to be centered */
+.reveal dl {
+    margin-left: 0;
+    text-align: center;
+}
+
+.reveal dl dd {
+    margin-left: 0;
+}
+
+/* Extra space between elements in a definition list */
+.reveal dl + p,
+dd + dt {
+    margin-top: 1em;
+}
+
+/* Helper to disable text-transform: uppercase on headings */
+.no-transform {
+    text-transform: none;
+}
+
+/* Hide text that's hidden for the sake of presentation. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+}
+
+/* Don't bold types for variables */
+code .typehint {
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Count von Count */
+.count-von-count:after {
+    content: '';
+    position: fixed;
+    top: 50vh;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    background: url('count.webp') top center no-repeat;
+    background-size: contain auto;
+    transition: all .2s;
+}
+
+.count-von-count[data-fragment="2"]:after {
+    opacity: 1;
+}
