@@ -240,3 +240,11 @@ code .typehint {
 .count-von-count[data-fragment="2"]:after {
     opacity: 1;
 }
+
+/* Print styles */
+@media print {
+    /* When code highlighting, don't dim anything. */
+    .reveal .hljs.has-highlights tr {
+        opacity: 1!important;
+    }
+}
