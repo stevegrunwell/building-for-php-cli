@@ -32,7 +32,7 @@ This presentation also has [a companion repository, full of executable examples 
 
 ## Presentation History
 
-* [php[tek] 2024](https://tek.phparch.com) — April 24, 2024 ([Joind.in](https://joind.in/event/phptek-2024/building-for-the-php-command-line-interface))
+* [php[tek] 2024](https://tek.phparch.com) — April 24, 2024 ([Joind.in](https://joind.in/event/phptek-2024/building-for-the-php-command-line-interface), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/phptek-2024/slides.pdf))
 * [Midwest PHP 2019](https://2019.midwestphp.org/) — March 8, 2019 ([Joind.in](https://joind.in/talk/b9a05), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/midwest-php/slides.pdf))
 * [WavePHP 2018](https://wavephp.com/) — September 20, 2018 ([Joind.in](https://joind.in/talk/6908c), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/wavephp-2018/slides.pdf))
 * [Southeast PHP](https://southeastphp.com/) - August 17, 2018 ([Joind.in](https://joind.in/talk/ed2e4), [PDF](https://github.com/stevegrunwell/building-for-php-cli/releases/download/southeastphp-2018/slides.pdf))
